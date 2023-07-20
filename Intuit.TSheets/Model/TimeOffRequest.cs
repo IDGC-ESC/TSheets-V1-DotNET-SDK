@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Intuit.TSheets.Client.Serialization.Attributes;
 using Intuit.TSheets.Client.Serialization.Converters;
+using Intuit.TSheets.Model.Enums;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using NJsonSchema.Annotations;
+using NJsonSchema;
 
 namespace Intuit.TSheets.Model
 {
@@ -33,14 +37,19 @@ namespace Intuit.TSheets.Model
         [JsonProperty("user_id")]
         public long UserID { get; set; }
 
+        [JsonConverter(typeof(EnumerableToCsvConverter))]
+        [JsonSchema(JsonObjectType.String)]
         [JsonProperty("time_off_request_notes")]
-        public IReadOnlyList<long> RequestNotes { get; set; } = Array.Empty<long>();
+        public IEnumerable<long> RequestNotes { get; internal set; }
 
+        [JsonConverter(typeof(EnumerableToCsvConverter))]
+        [JsonSchema(JsonObjectType.String)]
         [JsonProperty("time_off_request_entries")]
-        public IReadOnlyList<long> RequestEntries { get; set; } = Array.Empty<long>();
+        public IEnumerable<long> RequestEntries { get; internal set; }
 
+        [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("status")]
-        public string Status { get; set; } = null!;
+        public TimeOffRequestStatus Status { get; set; }
 
         [JsonProperty("active")]
         public bool Active { get; set; }
