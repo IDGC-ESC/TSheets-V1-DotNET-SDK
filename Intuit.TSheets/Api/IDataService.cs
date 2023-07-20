@@ -20,8 +20,12 @@
 namespace Intuit.TSheets.Api
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
+    using Intuit.TSheets.Client.Core;
+    using Intuit.TSheets.Client.RequestFlow.Contexts;
+    using Intuit.TSheets.Client.Utilities;
     using Intuit.TSheets.Model;
     using Intuit.TSheets.Model.Filters;
     using CustomFieldItemFilter = Intuit.TSheets.Model.CustomFieldItemFilter;
@@ -6838,6 +6842,668 @@ namespace Intuit.TSheets.Api
 
         #endregion
 
+        #region TimeOffRequestEntries
+
+        /// <summary>
+        /// Create TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Add a single time off request entry to your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntry">
+        /// The <see cref="TimeOffRequestEntry"/> object to be created.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequestEntry"/> object that was created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        (TimeOffRequestEntry, ResultsMeta) CreateTimeOffRequestEntry(TimeOffRequestEntry timeOffRequestEntry);
+
+        /// <summary>
+        /// Create TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Add one or more timeOffRequestEntries to your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntries">
+        /// The set of <see cref="TimeOffRequestEntry"/> objects to be created.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequestEntry"/> objects that were created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        (IList<TimeOffRequestEntry>, ResultsMeta) CreateTimeOffRequestEntries(IEnumerable<TimeOffRequestEntry> timeOffRequestEntries);
+
+        /// <summary>
+        /// Asynchronously Create TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Add a single time off request entry to your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntry">
+        /// The <see cref="TimeOffRequestEntry"/> object to be created.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequestEntry"/> object that was created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(TimeOffRequestEntry, ResultsMeta)> CreateTimeOffRequestEntryAsync(
+            TimeOffRequestEntry timeOffRequestEntry);
+
+        /// <summary>
+        /// Asynchronously Create TimeOffRequestEntries, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Add a single time off request entry to your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntry">
+        /// The <see cref="TimeOffRequestEntry"/> object to be created.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequestEntry"/> object that was created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(TimeOffRequestEntry, ResultsMeta)> CreateTimeOffRequestEntryAsync(
+            TimeOffRequestEntry timeOffRequestEntry,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Asynchronously Create TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Add one or more timeOffRequestEntries to your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntries">
+        /// The set of <see cref="TimeOffRequestEntry"/> objects to be created.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequestEntry"/> objects that were created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(IList<TimeOffRequestEntry>, ResultsMeta)> CreateTimeOffRequestEntriesAsync(
+            IEnumerable<TimeOffRequestEntry> timeOffRequestEntries);
+
+        /// <summary>
+        /// Asynchronously Create TimeOffRequestEntries, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Add one or more timeOffRequestEntries to your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntries">
+        /// The set of <see cref="TimeOffRequestEntry"/> objects to be created.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequestEntry"/> objects that were created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(IList<TimeOffRequestEntry>, ResultsMeta)> CreateTimeOffRequestEntriesAsync(
+            IEnumerable<TimeOffRequestEntry> timeOffRequestEntries,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Retrieve TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequestEntries associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestEntryFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequestEntry"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        (IList<TimeOffRequestEntry>, ResultsMeta) GetTimeOffRequestEntries(
+            TimeOffRequestEntryFilter filter);
+
+        /// <summary>
+        /// Retrieve TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequestEntries associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestEntryFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <param name="options">
+        /// An instance of the <see cref="RequestOptions"/> class, for customizing method processing.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequestEntry"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        (IList<TimeOffRequestEntry>, ResultsMeta) GetTimeOffRequestEntries(
+            TimeOffRequestEntryFilter filter,
+            RequestOptions options);
+
+        /// <summary>
+        /// Asynchronously Retrieve TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequestEntries associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestEntryFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequestEntry"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        Task<(IList<TimeOffRequestEntry>, ResultsMeta)> GetTimeOffRequestEntriesAsync(
+            TimeOffRequestEntryFilter filter);
+
+        /// <summary>
+        /// Asynchronously Retrieve TimeOffRequestEntries, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequestEntries associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestEntryFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequestEntry"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        Task<(IList<TimeOffRequestEntry>, ResultsMeta)> GetTimeOffRequestEntriesAsync(
+            TimeOffRequestEntryFilter filter,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Asynchronously Retrieve TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequestEntries associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestEntryFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <param name="options">
+        /// An instance of the <see cref="RequestOptions"/> class, for customizing method processing.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequestEntry"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        Task<(IList<TimeOffRequestEntry>, ResultsMeta)> GetTimeOffRequestEntriesAsync(
+            TimeOffRequestEntryFilter filter,
+            RequestOptions options);
+
+        /// <summary>
+        /// Asynchronously Retrieve TimeOffRequestEntries, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequestEntries associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestEntryFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <param name="options">
+        /// An instance of the <see cref="RequestOptions"/> class, for customizing method processing.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequestEntry"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        Task<(IList<TimeOffRequestEntry>, ResultsMeta)> GetTimeOffRequestEntriesAsync(
+            TimeOffRequestEntryFilter filter,
+            RequestOptions options,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Update TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Edit a single time off request entry in your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntry">
+        /// The <see cref="TimeOffRequestEntry"/> object to be updated.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequestEntry"/> object that was updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        (TimeOffRequestEntry, ResultsMeta) UpdateTimeOffRequestEntry(
+            TimeOffRequestEntry timeOffRequestEntry);
+
+        /// <summary>
+        /// Update TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Edit one or more timeOffRequestEntries in your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntries">
+        /// The set of <see cref="TimeOffRequestEntry"/> objects to be updated.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequestEntry"/> objects that were updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        (IList<TimeOffRequestEntry>, ResultsMeta) UpdateTimeOffRequestEntries(IEnumerable<TimeOffRequestEntry> timeOffRequestEntries);
+
+        /// <summary>
+        /// Asynchronously Update TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Edit a single time off request entry in your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntry">
+        /// The <see cref="TimeOffRequestEntry"/> object to be updated.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequestEntry"/> object that was updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(TimeOffRequestEntry, ResultsMeta)> UpdateTimeOffRequestEntryAsync(
+            TimeOffRequestEntry timeOffRequestEntry);
+
+        /// <summary>
+        /// Asynchronously Update TimeOffRequestEntries, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Edit a single time off request entry in your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntry">
+        /// The <see cref="TimeOffRequestEntry"/> object to be updated.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequestEntry"/> object that was updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(TimeOffRequestEntry, ResultsMeta)> UpdateTimeOffRequestEntryAsync(
+            TimeOffRequestEntry timeOffRequestEntry,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Asynchronously Update TimeOffRequestEntries.
+        /// </summary>
+        /// <remarks>
+        /// Edit one or more timeOffRequestEntries in your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntries">
+        /// The set of <see cref="TimeOffRequestEntry"/> objects to be updated.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequestEntry"/> objects that were updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(IList<TimeOffRequestEntry>, ResultsMeta)> UpdateTimeOffRequestEntriesAsync(
+            IEnumerable<TimeOffRequestEntry> timeOffRequestEntries);
+
+        /// <summary>
+        /// Asynchronously Update TimeOffRequestEntries, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Edit one or more timeOffRequestEntries in your company.
+        /// </remarks>
+        /// <param name="timeOffRequestEntries">
+        /// The set of <see cref="TimeOffRequestEntry"/> objects to be updated.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequestEntry"/> objects that were updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(IList<TimeOffRequestEntry>, ResultsMeta)> UpdateTimeOffRequestEntriesAsync(
+            IEnumerable<TimeOffRequestEntry> timeOffRequestEntries,
+            CancellationToken cancellationToken);
+
+        #endregion
+
+        #region TimeOffRequests
+
+        /// <summary>
+        /// Create TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Add a single time off request to your company.
+        /// </remarks>
+        /// <param name="timeOffRequest">
+        /// The <see cref="TimeOffRequest"/> object to be created.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequest"/> object that was created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        (TimeOffRequest, ResultsMeta) CreateTimeOffRequest(TimeOffRequest timeOffRequest);
+
+        /// <summary>
+        /// Create TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Add one or more timeOffRequests to your company.
+        /// </remarks>
+        /// <param name="timeOffRequests">
+        /// The set of <see cref="TimeOffRequest"/> objects to be created.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequest"/> objects that were created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        (IList<TimeOffRequest>, ResultsMeta) CreateTimeOffRequests(IEnumerable<TimeOffRequest> timeOffRequests);
+
+        /// <summary>
+        /// Asynchronously Create TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Add a single time off request to your company.
+        /// </remarks>
+        /// <param name="timeOffRequest">
+        /// The <see cref="TimeOffRequest"/> object to be created.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequest"/> object that was created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(TimeOffRequest, ResultsMeta)> CreateTimeOffRequestAsync(
+            TimeOffRequest timeOffRequest);
+
+        /// <summary>
+        /// Asynchronously Create TimeOffRequests, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Add a single time off request to your company.
+        /// </remarks>
+        /// <param name="timeOffRequest">
+        /// The <see cref="TimeOffRequest"/> object to be created.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequest"/> object that was created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(TimeOffRequest, ResultsMeta)> CreateTimeOffRequestAsync(
+            TimeOffRequest timeOffRequest,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Asynchronously Create TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Add one or more timeOffRequests to your company.
+        /// </remarks>
+        /// <param name="timeOffRequests">
+        /// The set of <see cref="TimeOffRequest"/> objects to be created.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequest"/> objects that were created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(IList<TimeOffRequest>, ResultsMeta)> CreateTimeOffRequestsAsync(
+            IEnumerable<TimeOffRequest> timeOffRequests);
+
+        /// <summary>
+        /// Asynchronously Create TimeOffRequests, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Add one or more timeOffRequests to your company.
+        /// </remarks>
+        /// <param name="timeOffRequests">
+        /// The set of <see cref="TimeOffRequest"/> objects to be created.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequest"/> objects that were created, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(IList<TimeOffRequest>, ResultsMeta)> CreateTimeOffRequestsAsync(
+            IEnumerable<TimeOffRequest> timeOffRequests,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Retrieve TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequests associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequest"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        (IList<TimeOffRequest>, ResultsMeta) GetTimeOffRequests(
+            TimeOffRequestFilter filter);
+
+        /// <summary>
+        /// Retrieve TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequests associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <param name="options">
+        /// An instance of the <see cref="RequestOptions"/> class, for customizing method processing.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequest"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        (IList<TimeOffRequest>, ResultsMeta) GetTimeOffRequests(
+            TimeOffRequestFilter filter,
+            RequestOptions options);
+
+        /// <summary>
+        /// Asynchronously Retrieve TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequests associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequest"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        Task<(IList<TimeOffRequest>, ResultsMeta)> GetTimeOffRequestsAsync(
+            TimeOffRequestFilter filter);
+
+        /// <summary>
+        /// Asynchronously Retrieve TimeOffRequests, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequests associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequest"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        Task<(IList<TimeOffRequest>, ResultsMeta)> GetTimeOffRequestsAsync(
+            TimeOffRequestFilter filter,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Asynchronously Retrieve TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequests associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <param name="options">
+        /// An instance of the <see cref="RequestOptions"/> class, for customizing method processing.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequest"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        Task<(IList<TimeOffRequest>, ResultsMeta)> GetTimeOffRequestsAsync(
+            TimeOffRequestFilter filter,
+            RequestOptions options);
+
+        /// <summary>
+        /// Asynchronously Retrieve TimeOffRequests, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Retrieves a list of all timeOffRequests associated with your company,
+        /// with optional filters to narrow down the results.
+        /// </remarks>
+        /// <param name="filter">
+        /// An instance of the <see cref="TimeOffRequestFilter"/> class, for narrowing down the results.
+        /// </param>
+        /// <param name="options">
+        /// An instance of the <see cref="RequestOptions"/> class, for customizing method processing.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// An enumerable set of <see cref="TimeOffRequest"/> objects, along with an output
+        /// instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns> 
+        Task<(IList<TimeOffRequest>, ResultsMeta)> GetTimeOffRequestsAsync(
+            TimeOffRequestFilter filter,
+            RequestOptions options,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Update TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Edit a single time off request in your company.
+        /// </remarks>
+        /// <param name="timeOffRequest">
+        /// The <see cref="TimeOffRequest"/> object to be updated.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequest"/> object that was updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        (TimeOffRequest, ResultsMeta) UpdateTimeOffRequest(
+            TimeOffRequest timeOffRequest);
+
+        /// <summary>
+        /// Update TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Edit one or more timeOffRequests in your company.
+        /// </remarks>
+        /// <param name="timeOffRequests">
+        /// The set of <see cref="TimeOffRequest"/> objects to be updated.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequest"/> objects that were updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        (IList<TimeOffRequest>, ResultsMeta) UpdateTimeOffRequests(IEnumerable<TimeOffRequest> timeOffRequests);
+
+        /// <summary>
+        /// Asynchronously Update TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Edit a single time off request in your company.
+        /// </remarks>
+        /// <param name="timeOffRequest">
+        /// The <see cref="TimeOffRequest"/> object to be updated.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequest"/> object that was updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(TimeOffRequest, ResultsMeta)> UpdateTimeOffRequestAsync(
+            TimeOffRequest timeOffRequest);
+
+        /// <summary>
+        /// Asynchronously Update TimeOffRequests, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Edit a single time off request in your company.
+        /// </remarks>
+        /// <param name="timeOffRequest">
+        /// The <see cref="TimeOffRequest"/> object to be updated.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// The <see cref="TimeOffRequest"/> object that was updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(TimeOffRequest, ResultsMeta)> UpdateTimeOffRequestAsync(
+            TimeOffRequest timeOffRequest,
+            CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Asynchronously Update TimeOffRequests.
+        /// </summary>
+        /// <remarks>
+        /// Edit one or more timeOffRequests in your company.
+        /// </remarks>
+        /// <param name="timeOffRequests">
+        /// The set of <see cref="TimeOffRequest"/> objects to be updated.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequest"/> objects that were updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(IList<TimeOffRequest>, ResultsMeta)> UpdateTimeOffRequestsAsync(
+            IEnumerable<TimeOffRequest> timeOffRequests);
+
+        /// <summary>
+        /// Asynchronously Update TimeOffRequests, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Edit one or more timeOffRequests in your company.
+        /// </remarks>
+        /// <param name="timeOffRequests">
+        /// The set of <see cref="TimeOffRequest"/> objects to be updated.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// The set of the <see cref="TimeOffRequest"/> objects that were updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(IList<TimeOffRequest>, ResultsMeta)> UpdateTimeOffRequestsAsync(
+            IEnumerable<TimeOffRequest> timeOffRequests,
+            CancellationToken cancellationToken);
+
+        #endregion
+
         #region Timesheets 
 
         /// <summary>
@@ -7118,26 +7784,6 @@ namespace Intuit.TSheets.Api
         /// Asynchronously Update Timesheets, with support for cancellation.
         /// </summary>
         /// <remarks>
-        /// Edit a single timesheet in your company.
-        /// </remarks>
-        /// <param name="timesheet">
-        /// The <see cref="Timesheet"/> object to be updated.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>
-        /// The <see cref="Timesheet"/> object that was updated, along with
-        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
-        /// </returns>
-        Task<(Timesheet, ResultsMeta)> UpdateTimesheetAsync(
-            Timesheet timesheet,
-            CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Asynchronously Update Timesheets, with support for cancellation.
-        /// </summary>
-        /// <remarks>
         /// Edit one or more timesheets in your company.
         /// </remarks>
         /// <param name="timesheets">
@@ -7169,6 +7815,26 @@ namespace Intuit.TSheets.Api
         /// </returns>
         Task<(Timesheet, ResultsMeta)> UpdateTimesheetAsync(
             Timesheet timesheet);
+
+        /// <summary>
+        /// Asynchronously Update Timesheets, with support for cancellation.
+        /// </summary>
+        /// <remarks>
+        /// Edit a single timesheet in your company.
+        /// </remarks>
+        /// <param name="timesheet">
+        /// The <see cref="Timesheet"/> object to be updated.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Timesheet"/> object that was updated, along with
+        /// an output instance of the <see cref="ResultsMeta"/> class containing additional data.
+        /// </returns>
+        Task<(Timesheet, ResultsMeta)> UpdateTimesheetAsync(
+            Timesheet timesheet,
+            CancellationToken cancellationToken);
 
         /// <summary>
         /// Delete Timesheets.
