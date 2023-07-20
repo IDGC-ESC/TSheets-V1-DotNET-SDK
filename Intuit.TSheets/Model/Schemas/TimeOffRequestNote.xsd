@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TimeOffRequestNote",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "time_off_request_id",
+    "user_id",
+    "active",
+    "note",
+    "created",
+    "last_modified"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "time_off_request_id": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int64"
+      }
+    },
+    "user_id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "note": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_modified": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
