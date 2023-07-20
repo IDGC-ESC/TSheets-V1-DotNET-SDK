@@ -53,7 +53,7 @@ namespace Intuit.TSheets.Client.Core
         ScheduleCalendars,
         ScheduleEvents,
         TimeOffRequests,
-        TimeOffRequestNotes,
+        TimeOffRequestEntries,
         Timesheets,
         TimesheetsDeleted,
         Users
