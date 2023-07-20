@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TimeOffRequestFilter",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ids",
+    "user_ids"
+  ],
+  "properties": {
+    "ids": {
+      "type": "string"
+    },
+    "user_ids": {
+      "type": "string"
+    }
+  }
+}

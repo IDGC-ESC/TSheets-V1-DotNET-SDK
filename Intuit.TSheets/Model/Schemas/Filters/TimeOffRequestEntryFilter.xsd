@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TimeOffRequestEntryFilter",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ids",
+    "time_off_request_ids",
+    "approver_user_ids",
+    "status",
+    "date",
+    "start_time",
+    "end_time",
+    "jobcode_ids",
+    "user_ids"
+  ],
+  "properties": {
+    "ids": {
+      "type": "string"
+    },
+    "time_off_request_ids": {
+      "type": "string"
+    },
+    "approver_user_ids": {
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/definitions/TimeOffRequestStatus"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "jobcode_ids": {
+      "type": "string"
+    },
+    "user_ids": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "TimeOffRequestStatus": {
+      "type": "string",
+      "description": "",
+      "x-enumNames": [
+        "Pending",
+        "Approved",
+        "Denied",
+        "Canceled"
+      ],
+      "enum": [
+        "pending",
+        "approved",
+        "denied",
+        "canceled"
+      ]
+    }
+  }
+}
