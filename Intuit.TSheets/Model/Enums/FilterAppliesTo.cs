@@ -42,6 +42,12 @@ namespace Intuit.TSheets.Model.Enums
         /// Filter applies to Group entity types.
         /// </summary>
         [EnumMember(Value = "groups")]
-        Groups
+        Groups,
+
+        /// <summary>
+        /// Filter applies to TimeOffRequest entity types.
+        /// </summary>
+        [EnumMember(Value = "time_off_requests")]
+        TimeOffRequests
     }
 }

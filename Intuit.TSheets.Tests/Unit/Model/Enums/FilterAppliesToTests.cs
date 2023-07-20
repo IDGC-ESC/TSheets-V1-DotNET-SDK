@@ -29,13 +29,14 @@ namespace Intuit.TSheets.Tests.Unit.Model.Enums
         [TestMethod, TestCategory("Unit")]
         public void FilterAppliesTo_StringValuesAreCorrect()
         {
-            const int expectedCount = 3;
+            const int expectedCount = 4;
             int actualCount = Enum.GetNames(typeof(FilterAppliesTo)).Length;
             Assert.AreEqual(expectedCount, actualCount, $"Expected {expectedCount} enum values.");
 
             Assert.AreEqual("jobcodes", FilterAppliesTo.Jobcodes.StringValue());
             Assert.AreEqual("users", FilterAppliesTo.Users.StringValue());
             Assert.AreEqual("groups", FilterAppliesTo.Groups.StringValue());
+            Assert.AreEqual("time_off_requests", FilterAppliesTo.TimeOffRequests.StringValue());
         }
     }
 }
