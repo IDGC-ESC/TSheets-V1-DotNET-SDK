@@ -29,7 +29,7 @@ namespace Intuit.TSheets.Tests.Unit.Client.Core
         [TestMethod, TestCategory("Unit")]
         public void EndpointNames_CountOfEnumValuesIsAsExpected()
         {
-            const int expectedCount = 31;
+            const int expectedCount = 33;
             int actualCount = Enum.GetNames(typeof(EndpointName)).Length;
             Assert.AreEqual(expectedCount, actualCount, $"Expected {expectedCount} enum values.");
         }
