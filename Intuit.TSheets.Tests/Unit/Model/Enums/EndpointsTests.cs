@@ -29,7 +29,7 @@ namespace Intuit.TSheets.Tests.Unit.Model.Enums
         [TestMethod, TestCategory("Unit")]
         public void Endpoints_StringValuesAreCorrect()
         {
-            const int expectedCount = 13;
+            const int expectedCount = 15;
             int actualCount = Enum.GetNames(typeof(Endpoints)).Length;
             Assert.AreEqual(expectedCount, actualCount, $"Expected {expectedCount} enum values.");
 
@@ -46,6 +46,8 @@ namespace Intuit.TSheets.Tests.Unit.Model.Enums
             Assert.AreEqual("reminders", Endpoints.Reminders.StringValue());
             Assert.AreEqual("locations", Endpoints.Locations.StringValue());
             Assert.AreEqual("geofence_configs", Endpoints.GeofenceConfigs.StringValue());
+            Assert.AreEqual("time_off_requests", Endpoints.TimeOffRequests.StringValue());
+            Assert.AreEqual("time_off_request_entries", Endpoints.TimeOffRequestEntries.StringValue());
         }
     }
 }
