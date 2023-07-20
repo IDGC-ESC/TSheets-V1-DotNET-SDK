@@ -150,9 +150,9 @@ namespace Intuit.TSheets.Tests.Unit
                 return EndpointName.ScheduleEvents;
             }
 
-            if (methodName.Contains("TimeOffRequestNotes"))
+            if (methodName.Contains("TimeOffRequestEntries"))
             {
-                return EndpointName.TimeOffRequestNotes;
+                return EndpointName.TimeOffRequestEntries;
             }
 
             if (methodName.Contains("TimeOffRequest"))

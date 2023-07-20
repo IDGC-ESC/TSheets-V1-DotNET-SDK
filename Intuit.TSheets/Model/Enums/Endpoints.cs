@@ -109,6 +109,12 @@ namespace Intuit.TSheets.Model.Enums
         ///  The GeofenceConfigs endpoint.
         /// </summary>
         [EnumMember(Value = "geofence_configs")]
-        GeofenceConfigs = 0x1000
+        GeofenceConfigs = 0x1000,
+
+        [EnumMember(Value = "time_off_requests")]
+        TimeOffRequests = 0x2000,
+
+        [EnumMember(Value = "time_off_request_entries")]
+        TimeOffRequestEntries = 0x4000
     }
 }
