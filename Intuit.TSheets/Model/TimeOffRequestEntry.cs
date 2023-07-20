@@ -3,9 +3,12 @@ using Intuit.TSheets.Model.Enums;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
 using Intuit.TSheets.Client.Serialization.Converters;
+using Intuit.TSheets.Client.Serialization.Attributes;
 
 namespace Intuit.TSheets.Model
 {
+    [DataEntity]
+    [JsonObject]
     public class TimeOffRequestEntry : IIdentifiable
     {
         [JsonProperty("id")]
