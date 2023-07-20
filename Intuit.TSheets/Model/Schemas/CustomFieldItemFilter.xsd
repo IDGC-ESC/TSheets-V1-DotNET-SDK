@@ -47,12 +47,14 @@
       "x-enumNames": [
         "Jobcodes",
         "Users",
-        "Groups"
+        "Groups",
+        "TimeOffRequests"
       ],
       "enum": [
         0,
         1,
-        2
+        2,
+        3
       ]
     }
   }
