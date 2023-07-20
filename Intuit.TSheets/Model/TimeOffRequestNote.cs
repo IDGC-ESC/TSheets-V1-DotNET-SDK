@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 
 namespace Intuit.TSheets.Model
 {
+    [JsonObject]
     public class TimeOffRequestNote : IIdentifiable
     {
         /// <summary>
