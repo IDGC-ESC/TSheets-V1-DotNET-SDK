@@ -16,7 +16,7 @@ namespace Intuit.TSheets.Model
         public long Id { get; internal set; }
 
         [JsonProperty("time_off_request_id")]
-        public IEnumerable<long> RequestID { get; internal set; }
+        public IReadOnlyList<long> RequestID { get; internal set; }
 
         /// <summary>
         /// Gets or sets the id for the user that this timesheet belongs to.

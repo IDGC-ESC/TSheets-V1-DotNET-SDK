@@ -40,12 +40,12 @@ namespace Intuit.TSheets.Model
         [JsonConverter(typeof(EnumerableToCsvConverter))]
         [JsonSchema(JsonObjectType.String)]
         [JsonProperty("time_off_request_notes")]
-        public IEnumerable<long> RequestNotes { get; internal set; }
+        public IReadOnlyList<long> RequestNotes { get; internal set; }
 
         [JsonConverter(typeof(EnumerableToCsvConverter))]
         [JsonSchema(JsonObjectType.String)]
         [JsonProperty("time_off_request_entries")]
-        public IEnumerable<long> RequestEntries { get; internal set; }
+        public IReadOnlyList<long> RequestEntries { get; internal set; }
 
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("status")]
