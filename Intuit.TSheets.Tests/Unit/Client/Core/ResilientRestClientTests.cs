@@ -19,7 +19,6 @@
 
 namespace Intuit.TSheets.Tests.Unit.Client.Core
 {
-    using System;
     using System.Collections.Generic;
     using System.Text;
     using System.Threading;
@@ -28,10 +27,8 @@ namespace Intuit.TSheets.Tests.Unit.Client.Core
     using Intuit.TSheets.Client.Core;
     using Intuit.TSheets.Client.Utilities;
     using Intuit.TSheets.Model.Exceptions;
-    using Microsoft.Extensions.Logging;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
-    using Polly;
 
     [TestClass]
     public class ResilientRestClientTests : UnitTestBase

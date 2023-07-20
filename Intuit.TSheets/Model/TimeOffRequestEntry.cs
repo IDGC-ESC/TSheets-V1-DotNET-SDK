@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Intuit.TSheets.Model.Enums;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;

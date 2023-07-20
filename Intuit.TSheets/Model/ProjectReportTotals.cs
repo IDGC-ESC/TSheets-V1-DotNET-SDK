@@ -20,7 +20,6 @@
 namespace Intuit.TSheets.Model
 {
     using System.Collections.Generic;
-    using Intuit.TSheets.Client.Serialization.Converters;
     using Newtonsoft.Json;
 
     /// <summary>

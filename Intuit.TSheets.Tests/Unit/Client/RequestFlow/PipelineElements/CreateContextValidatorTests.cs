@@ -20,7 +20,6 @@
 namespace Intuit.TSheets.Tests.Unit.Client.RequestFlow.PipelineElements
 {
     using System.Collections.Generic;
-    using System.Threading;
     using System.Threading.Tasks;
     using Intuit.TSheets.Client.Core;
     using Intuit.TSheets.Client.RequestFlow.Contexts;

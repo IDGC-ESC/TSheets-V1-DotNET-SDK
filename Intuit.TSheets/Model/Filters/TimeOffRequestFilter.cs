@@ -1,11 +1,8 @@
 ﻿namespace Intuit.TSheets.Model.Filters
 {
-    using System;
     using System.Collections.Generic;
     using Intuit.TSheets.Client.Serialization.Converters;
-    using Intuit.TSheets.Model.Enums;
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
     using NJsonSchema;
     using NJsonSchema.Annotations;
 
