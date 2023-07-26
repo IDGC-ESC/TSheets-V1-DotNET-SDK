@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
     /// This converter is necessitated by the TSheets' API convention of using "0000-00-00"
     /// to indicate an uninitialized date.
     /// </remarks>
-    internal class DateFormatConverter : IsoDateTimeConverter
+    public class DateFormatConverter : IsoDateTimeConverter
     {
         private const string UninitializedDateString = "0000-00-00";
         private const string DateOnlyFormat = "yyyy-MM-dd";
@@ -54,7 +54,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// <param name="serializer">The calling serializer, <see cref="JsonSerializer"/></param> 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            string outValue = GetStringValue(value as DateTimeOffset?, DateOnlyFormat);
+            string outValue = GetStringValue(value as DateTimeOffset?, DateTimeFormat);
 
             writer.WriteValue(outValue);
         }
@@ -70,12 +70,12 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// <returns>The object value.</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            return GetDateTimeOffsetValue((string)reader.Value, DateOnlyFormat);
+            return GetDateTimeOffsetValue((string)reader.Value, DateTimeFormat);
         }
 
         private static DateTimeOffset GetDateTimeOffsetValue(string stringValue, string format)
         {
-            return (stringValue.Equals(string.Empty) || stringValue.Equals(UninitializedDateString))
+            return (string.IsNullOrEmpty(stringValue) || stringValue.Equals(UninitializedDateString))
                 ? DateTimeOffset.MinValue
                 : DateTimeOffset.ParseExact(stringValue, format, CultureInfo.InvariantCulture);
         }
