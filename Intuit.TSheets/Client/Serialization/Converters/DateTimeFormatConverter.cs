@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
     /// The empty string behavior of this converter exists to support the use case of creating "on-the-clock"
     /// timesheets.  In such a case, the API expects the 'End' property to be set to an empty string.
     /// </remarks>
-    internal class DateTimeFormatConverter : IsoDateTimeConverter
+    public class DateTimeFormatConverter : IsoDateTimeConverter
     {
         private const string Format = "yyyy-MM-ddTHH:mm:ssK";
 
