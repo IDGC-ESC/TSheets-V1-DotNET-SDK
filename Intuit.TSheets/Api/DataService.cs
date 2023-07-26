@@ -20,23 +20,64 @@
 namespace Intuit.TSheets.Api
 {
     using System;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
     using Intuit.TSheets.Client.Core;
     using Intuit.TSheets.Client.RequestFlow.Contexts;
     using Intuit.TSheets.Client.RequestFlow.Pipelines;
+    using Intuit.TSheets.Client.Serialization.Attributes;
+    using Intuit.TSheets.Client.Serialization.Converters;
     using Intuit.TSheets.Model.Exceptions;
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Logging.Abstractions;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Top-level service class for interacting with all TSheets API operations.
     /// </summary>
     public partial class DataService : IDataService
     {
+        protected static readonly IEnumerable<JsonConverter> Converters = new JsonConverter[]
+        {
+            new BoolStringConverter(),
+            new DateFormatConverter(),
+            new DateTimeFormatConverter(),
+            new EmptyArrayObjectConverter(),
+            new EnumerableToCsvConverter(),
+            new SerializationConverter(typeof(NoSerializeOnCreateAttribute), typeof(NoSerializeOnWriteAttribute)),
+            new TimeFormatConverter()
+        };
+
+        private static JsonSerializerSettings settings;
+
+        protected static JsonSerializerSettings Settings
+        {
+            get
+            {
+                if (settings == null)
+                {
+                    settings ??= new();
+                    settings.CheckAdditionalContent = false;
+                    settings.NullValueHandling = NullValueHandling.Ignore;
+                    settings.Formatting = Formatting.Indented;
+                    foreach (JsonConverter converter in Converters)
+                    {
+                        settings.Converters.Add(converter);
+                    }
+                }
+                return settings;
+            }
+        }
+
         private readonly IRestClient restClient;
         private readonly ILogger logger;
         private readonly IPipelineFactory pipelineFactory;
+
+        static DataService()
+        {
+            JsonConvert.DefaultSettings = () => Settings;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataService"/> class.
