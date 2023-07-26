@@ -41,6 +41,9 @@ namespace Intuit.TSheets.Client.Utilities
             { "jobcodes",         () => new Jobcode() },
             { "locations",        () => new Location() },
             { "schedule_events",  () => new ScheduleEvent() },
+            { "time_off_requests", () => new TimeOffRequest() },
+            { "time_off_request_entries", () => new TimeOffRequestEntry() },
+            { "time_off_request_notes", () => new TimeOffRequestNote() },
             { "timesheets",       () => new Timesheet() },
             { "users",            () => new User() }
         };
