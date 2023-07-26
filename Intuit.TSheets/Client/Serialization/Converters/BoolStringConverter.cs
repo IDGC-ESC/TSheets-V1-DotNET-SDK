@@ -27,7 +27,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
     /// A JSON serialization converter for serializing bool properties to
     /// custom string values, and deserializing the inverse.
     /// </summary>
-    internal class BoolStringConverter : JsonConverter
+    public class BoolStringConverter : JsonConverter
     {
         private const string DefaultTrueString = "yes";
         private const string DefaultFalseString = "no";
@@ -86,7 +86,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// <returns>The object value.</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            var input = (string)reader?.Value;
+            var input = Convert.ToString(reader?.Value);
 
             return input?.Equals(this.trueString, StringComparison.InvariantCultureIgnoreCase);
         }
@@ -104,7 +104,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// </example>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var input = (bool?)value;
+            bool? input = value != null && (bool)value;
 
             string output = input.HasValue
                 ? input.Value ? this.trueString : this.falseString
