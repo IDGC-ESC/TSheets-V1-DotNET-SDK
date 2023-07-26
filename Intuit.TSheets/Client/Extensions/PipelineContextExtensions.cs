@@ -52,6 +52,8 @@ namespace Intuit.TSheets.Client.Extensions
             { EndpointName.Reminders, "results.reminders.*" },
             { EndpointName.ScheduleCalendars, "results.schedule_calendars.*" },
             { EndpointName.ScheduleEvents, "results.schedule_events.*" },
+            { EndpointName.TimeOffRequests, "results.time_off_requests.*" },
+            { EndpointName.TimeOffRequestEntries, "results.time_off_request_entries.*" },
             { EndpointName.Timesheets, "results.timesheets.*" },
             { EndpointName.TimesheetsDeleted, "results.timesheets_deleted.*" },
             { EndpointName.Tests, "results.tests.*" },
