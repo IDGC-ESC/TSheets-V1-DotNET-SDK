@@ -54,7 +54,7 @@ namespace Intuit.TSheets.Model
         [JsonProperty("last_modified")]
         public DateTimeOffset LastModified { get; internal set; }
 
-        [JsonConverter(typeof(DateTimeFormatConverter))]
+        [JsonConverter(typeof(DateFormatConverter))]
         [JsonProperty("date")]
         public DateTimeOffset Date { get; set; }
 

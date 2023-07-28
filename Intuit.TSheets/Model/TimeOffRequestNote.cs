@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using Intuit.TSheets.Client.Serialization.Attributes;
 using Intuit.TSheets.Client.Serialization.Converters;
 using Newtonsoft.Json;
 
 namespace Intuit.TSheets.Model
 {
+    [DataEntity]
     [JsonObject]
     public class TimeOffRequestNote : IIdentifiable
     {
@@ -17,7 +17,7 @@ namespace Intuit.TSheets.Model
         public long Id { get; internal set; }
 
         [JsonProperty("time_off_request_id")]
-        public IReadOnlyList<long> RequestID { get; internal set; }
+        public long RequestID { get; internal set; }
 
         /// <summary>
         /// Gets or sets the id for the user that this timesheet belongs to.
@@ -29,7 +29,7 @@ namespace Intuit.TSheets.Model
         public bool Active { get; internal set; }
 
         [JsonProperty("note")]
-        public string Note { get; set; } = null!;
+        public string Note { get; set; }
 
         [JsonConverter(typeof(DateTimeFormatConverter))]
         [JsonProperty("created")]

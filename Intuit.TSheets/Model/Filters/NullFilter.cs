@@ -19,6 +19,7 @@
 
 namespace Intuit.TSheets.Model.Filters
 {
+    using System.Collections.Generic;
     using Newtonsoft.Json;
 
     /// <summary>
@@ -27,5 +28,6 @@ namespace Intuit.TSheets.Model.Filters
     [JsonObject]
     internal class NullFilter : EntityFilter
     {
+        public override Dictionary<string, string> GetFilters() => new();
     }
 }

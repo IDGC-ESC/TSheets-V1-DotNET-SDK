@@ -24,6 +24,7 @@ namespace Intuit.TSheets.Client.Core
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Text;
+    using System.Text.RegularExpressions;
     using System.Threading;
     using System.Threading.Tasks;
     using Intuit.TSheets.Api;
@@ -252,14 +253,18 @@ namespace Intuit.TSheets.Client.Core
         private Uri CreateRequestUri(EndpointName endpointName, Dictionary<string, string> filters = null)
         {
             string endpointSegment = EndpointMapper.GetEndpoint(endpointName);
-            Uri fullUri = new Uri($"{this.context.ConnectionInfo.BaseUri}/{endpointSegment}");
+            Uri result = new Uri($"{this.context.ConnectionInfo.BaseUri}/{endpointSegment}");
 
-            return filters?.Count > 0
-                ? new UriBuilder(fullUri)
-                {
-                    Query = filters.ToUrlQueryString()
-                }.Uri
-                : fullUri;
+            if (filters?.Count > 0)
+            {
+                
+                string query = filters.ToUrlQueryString();
+                query = Regex.Replace(query, "(%(?:22|5[BD])|')", "");
+                query = Regex.Replace(query, @"(?<=\b)\w+=(?:$|&)", "");
+                result = new UriBuilder(result) { Query = query }.Uri;
+            }
+
+            return result;
         }
 
         private void LogMethodCall(MethodType methodType, Uri requestUri, LogContext logContext, string requestData = null)

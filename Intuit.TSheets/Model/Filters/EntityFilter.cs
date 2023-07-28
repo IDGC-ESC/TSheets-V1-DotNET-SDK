@@ -20,6 +20,10 @@
 namespace Intuit.TSheets.Model.Filters
 {
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using Intuit.TSheets.Client.Serialization.Attributes;
+    using Intuit.TSheets.Client.Serialization.Converters;
     using Newtonsoft.Json;
 
     /// <summary>
@@ -28,21 +32,56 @@ namespace Intuit.TSheets.Model.Filters
     /// </summary>
     public abstract class EntityFilter : IEntityFilter
     {
+        private static JsonSerializerSettings settings;
+
+        protected static JsonSerializerSettings Settings
+        {
+            get
+            {
+                if (settings == null)
+                {
+                    settings = new();
+                    settings.Converters.Add(new BoolStringConverter());
+                    settings.Converters.Add(new DateFormatConverter());
+                    settings.Converters.Add(new DateTimeFormatConverter());
+                    settings.Converters.Add(new EmptyArrayObjectConverter());
+                    settings.Converters.Add(new EnumerableToCsvConverter());
+                    settings.Converters.Add(new SerializationConverter(typeof(NoSerializeOnCreateAttribute), typeof(NoSerializeOnWriteAttribute)));
+                    settings.Converters.Add(new TimeFormatConverter());
+                    settings.NullValueHandling = NullValueHandling.Ignore;
+                    settings.MissingMemberHandling = MissingMemberHandling.Ignore;
+                    settings.CheckAdditionalContent = false;
+                }
+                return settings;
+            }
+        }
+
         /// <summary>
         /// Generates a set of key/value pairs from the properties of a EntityFilter object.
         /// </summary>
         /// <returns>The set of key/value pairs</returns>
         public virtual Dictionary<string, string> GetFilters()
         {
-            string serialized = JsonConvert.SerializeObject(
-                this,
-                Formatting.Indented,
-                new JsonSerializerSettings
+            var props = GetType()
+                .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                .Where(p => p.GetCustomAttribute<JsonIgnoreAttribute>() == null);
+            Dictionary<string, string> results = new();
+            foreach (var prop in props)
+            {
+                string name = prop.Name;
+                var att = prop.GetCustomAttribute<JsonPropertyAttribute>();
+                if (att != null)
                 {
-                    NullValueHandling = NullValueHandling.Ignore
-                });
-
-            return JsonConvert.DeserializeObject<Dictionary<string, string>>(serialized);
+                    name = att.PropertyName;
+                }
+                object rawValue = prop.GetValue(this, null);
+                if (rawValue != null)
+                {
+                    string value = JsonConvert.SerializeObject(rawValue, Settings);
+                    results.Add(name, value);
+                }
+            }
+            return results;
         }
     }
 }

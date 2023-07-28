@@ -30,7 +30,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
     /// A JSON serialization converter for serializing objects of type IEnumerable&lt;T&gt;
     /// to a string of comma-delimited values, and deserializing the inverse.
     /// </summary>
-    internal class EnumerableToCsvConverter : JsonConverter
+    public class EnumerableToCsvConverter : JsonConverter
     {
         /// <summary>
         /// Determines whether this instance can convert the specified object type.
@@ -41,8 +41,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// Conversion is available for generic enumerable types.
         /// </remarks>
         public override bool CanConvert(Type objectType)
-            => objectType.GetInterfaces().Any(
-                t => t.GetGenericTypeDefinition() == typeof(IEnumerable<>));
+            => objectType.IsAssignableTo(typeof(IEnumerable<>));
 
         /// <summary>
         /// Convert a string of values into a list.
@@ -63,7 +62,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
 
             if (string.IsNullOrWhiteSpace(csv))
             {
-                return null;
+                return Enumerable.Empty<object>();
             }
 
             // Split the values and return as a list of ints if possible, else as a list of strings.

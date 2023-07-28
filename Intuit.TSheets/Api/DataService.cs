@@ -38,7 +38,7 @@ namespace Intuit.TSheets.Api
     /// </summary>
     public partial class DataService : IDataService
     {
-        protected static readonly IEnumerable<JsonConverter> Converters = new JsonConverter[]
+        internal static readonly IEnumerable<JsonConverter> Converters = new JsonConverter[]
         {
             new BoolStringConverter(),
             new DateFormatConverter(),
@@ -51,7 +51,7 @@ namespace Intuit.TSheets.Api
 
         private static JsonSerializerSettings settings;
 
-        protected static JsonSerializerSettings Settings
+        public static JsonSerializerSettings Settings
         {
             get
             {

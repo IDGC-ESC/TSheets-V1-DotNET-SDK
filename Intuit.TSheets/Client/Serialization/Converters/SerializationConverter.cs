@@ -23,6 +23,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
+    using Intuit.TSheets.Client.Extensions;
     using Intuit.TSheets.Client.Serialization.Attributes;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
@@ -40,7 +41,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
     /// Likewise, the "CreatedData" property is never to be serialized (whether a POST/PUT).
     /// This property is therefore attributed with [NoSerializeOnWrite].
     /// </example>
-    internal class SerializationConverter : JsonConverter
+    public class SerializationConverter : JsonConverter
     {
         private readonly List<Type> noSerializeTypes;
 
@@ -50,7 +51,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// <param name="noSerializeTypes">
         /// The <see cref="Attribute"/> types used to indicate properties must not be serialized.
         /// </param>
-        internal SerializationConverter(params Type[] noSerializeTypes)
+        public SerializationConverter(params Type[] noSerializeTypes)
         {
             this.noSerializeTypes = noSerializeTypes.ToList();
         }
@@ -69,7 +70,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// <param name="objectType">Type of the object.</param>
         /// <returns>true if this instance can convert the specified object type; otherwise, false.</returns>
         public override bool CanConvert(Type objectType) => 
-            objectType.GetCustomAttribute(typeof(DataEntityAttribute)) != null;
+            objectType.HasCustomAttribute(typeof(DataEntityAttribute));
 
         /// <summary>
         /// During deserialization, reads the JSON representation of the object and converts a custom string into a bool value.
@@ -108,7 +109,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
 
                 object propVal = propInfo.GetValue(value, null);
 
-                bool noSerializeAttribute = this.noSerializeTypes.Any(n => propInfo.GetCustomAttribute(n) != null);
+                bool noSerializeAttribute = noSerializeTypes.Any(n => propInfo.GetCustomAttribute(n) != null);
 
                 if (propVal == null || noSerializeAttribute)
                 {

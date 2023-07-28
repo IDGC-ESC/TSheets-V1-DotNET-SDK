@@ -20,12 +20,12 @@
 namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
     using Intuit.TSheets.Client.Extensions;
     using Intuit.TSheets.Client.RequestFlow.Contexts;
     using Microsoft.Extensions.Logging;
-    using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
@@ -53,16 +53,15 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
             ILogger logger,
             CancellationToken cancellationToken)
         {
-            JObject document = JObject.Parse(context.ResponseContent);
-            IEnumerable<JToken> tokens = document.SelectTokens(context.JsonPath());
-
             var results = new Results<T>();
-            foreach (JToken token in tokens)
-            {
-                T item = JsonConvert.DeserializeObject<T>(token.ToString());
-                results.Items.Add(item);
-            }
 
+            JObject document = JObject.Parse(context.ResponseContent);
+            string path = context.JsonPath();
+
+            JToken resultsToken = document.SelectToken(path.Replace(".*",""));
+            Dictionary<string, T> test = resultsToken.FromJson<Dictionary<string, T>>();
+
+            results.Items = test.Values.ToList();
             context.Results = results;
 
             return Task.CompletedTask;

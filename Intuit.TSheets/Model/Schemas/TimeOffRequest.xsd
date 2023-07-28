@@ -23,13 +23,21 @@
       "format": "int64"
     },
     "time_off_request_notes": {
-      "type": "string"
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int64"
+      }
     },
     "time_off_request_entries": {
-      "type": "string"
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int64"
+      }
     },
     "status": {
-      "$ref": "#/definitions/TimeOffRequestStatus"
+      "type": "string"
     },
     "active": {
       "type": "boolean"
@@ -41,24 +49,6 @@
     "last_modified": {
       "type": "string",
       "format": "date-time"
-    }
-  },
-  "definitions": {
-    "TimeOffRequestStatus": {
-      "type": "string",
-      "description": "",
-      "x-enumNames": [
-        "Pending",
-        "Approved",
-        "Denied",
-        "Canceled"
-      ],
-      "enum": [
-        "pending",
-        "approved",
-        "denied",
-        "canceled"
-      ]
     }
   }
 }

@@ -1,4 +1,5 @@
-﻿// *******************************************************************************
+﻿using System.Linq;
+// *******************************************************************************
 // <copyright file="ObjectExtensions.cs" company="Intuit">
 // Copyright (c) 2019 Intuit
 //
@@ -20,12 +21,24 @@
 namespace Intuit.TSheets.Client.Extensions
 {
     using System;
+    using System.Collections.Generic;
+    using System.Reflection;
 
     /// <summary>
     /// For internal use, extension methods for object.
     /// </summary>
     internal static class ObjectExtensions
     {
+        public static bool HasCustomAttribute<T>(this T _, Type attributeType) => typeof(T).HasCustomAttribute(attributeType);
+
+        public static bool HasCustomAttribute(this Type type, Type attributeType) => type.GetCustomAttribute(attributeType) != null;
+
+        public static bool IsAssignableTo(this Type objectType, Type baseType) => baseType.IsAssignableFrom(objectType);
+
+        public static bool IsAssignableToAny(this Type objectType, params Type[] baseType) => IsAssignableToAny(objectType, (IEnumerable<Type>)baseType);
+
+        public static bool IsAssignableToAny(this Type objectType, IEnumerable<Type> baseTypes) => baseTypes.Any(objectType.IsAssignableTo);
+
         /// <summary>
         /// Throws an instance of <see cref="ArgumentNullException"/> if the value is null.
         /// </summary>

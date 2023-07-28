@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Intuit.TSheets.Client.Serialization.Attributes;
 using Intuit.TSheets.Client.Serialization.Converters;
 using Intuit.TSheets.Model.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using NJsonSchema.Annotations;
 using NJsonSchema;
+using NJsonSchema.Annotations;
 
 namespace Intuit.TSheets.Model
 {
@@ -15,39 +14,31 @@ namespace Intuit.TSheets.Model
     [JsonObject]
     public class TimeOffRequest : IIdentifiable
     {
-        public TimeOffRequest()
-        {
-        }
-
-        public TimeOffRequest(IEnumerable<long> requestEntryIds)
-        {
-            RequestEntries = requestEntryIds?.ToList();
-        }
-
         /// <summary>
         /// Gets the id of the time off request.
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the id for the user that this timesheet belongs to.
         /// </summary>
         [JsonProperty("user_id")]
-        public long UserID { get; set; }
+        public long UserId { get; set; }
 
-        [JsonConverter(typeof(EnumerableToCsvConverter))]
-        [JsonSchema(JsonObjectType.String)]
+        //[JsonConverter(typeof(EnumerableToCsvConverter))]
+        //[JsonSchema(JsonObjectType.Array)]
         [JsonProperty("time_off_request_notes")]
-        public IReadOnlyList<long> RequestNotes { get; internal set; }
+        public IList<long> RequestNotes { get; set; }
 
-        [JsonConverter(typeof(EnumerableToCsvConverter))]
-        [JsonSchema(JsonObjectType.String)]
+        //[JsonConverter(typeof(EnumerableToCsvConverter))]
+        //[JsonSchema(JsonObjectType.Array)]
         [JsonProperty("time_off_request_entries")]
-        public IReadOnlyList<long> RequestEntries { get; internal set; }
+        public IList<long> RequestEntries { get; set; }
 
         [JsonConverter(typeof(StringEnumConverter))]
+        [JsonSchema(JsonObjectType.String)]
         [JsonProperty("status")]
         public TimeOffRequestStatus Status { get; set; }
 
@@ -56,10 +47,10 @@ namespace Intuit.TSheets.Model
 
         [JsonConverter(typeof(DateTimeFormatConverter))]
         [JsonProperty("created")]
-        public DateTimeOffset Created { get; internal set; }
+        public DateTimeOffset Created { get; set; }
 
         [JsonConverter(typeof(DateTimeFormatConverter))]
         [JsonProperty("last_modified")]
-        public DateTimeOffset LastModified { get; internal set; }
+        public DateTimeOffset LastModified { get; set; }
     }
 }

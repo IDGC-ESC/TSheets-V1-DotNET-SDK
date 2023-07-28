@@ -20,6 +20,7 @@
 namespace Intuit.TSheets.Client.Serialization.Converters
 {
     using System;
+    using Intuit.TSheets.Client.Extensions;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
@@ -69,7 +70,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// </summary>
         /// <param name="objectType">Type of the object.</param>
         /// <returns>true if this instance can convert the specified object type; otherwise, false.</returns>
-        public override bool CanConvert(Type objectType) => true;
+        public override bool CanConvert(Type objectType) => objectType.IsAssignableTo(typeof(bool?));
 
         /// <summary>
         /// During deserialization, reads the JSON representation of the object and converts a custom string into a bool value.

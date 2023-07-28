@@ -13,41 +13,6 @@
     public class TimeOffRequestFilter : EntityFilter
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TimeOffRequestFilter"/> class.
-        /// </summary>
-        public TimeOffRequestFilter()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeOffRequestFilter"/> class,
-        /// with minimal required parameters to perform a retrieval operation.
-        /// </summary>
-        /// <param name="ids">
-        /// The time off request ids you'd like to filter on.
-        /// </param>
-        public TimeOffRequestFilter(IEnumerable<long> ids)
-        {
-            Ids = ids;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TimeOffRequestFilter"/> class,
-        /// with minimal required parameters to perform a retrieval operation.
-        /// </summary>
-        /// <param name="ids">
-        /// The time off request ids you'd like to filter on.
-        /// </param>
-        /// <param name="userIds">
-        /// The time off user ids you'd like to filter on.
-        /// </param>
-        public TimeOffRequestFilter(IEnumerable<long> ids, IEnumerable<long> userIds)
-        {
-            Ids = ids;
-            UserIds = userIds;
-        }
-
-        /// <summary>
         /// Gets or sets the time off request ids you'd like to filter on.
         /// </summary>
         [JsonConverter(typeof(EnumerableToCsvConverter))]

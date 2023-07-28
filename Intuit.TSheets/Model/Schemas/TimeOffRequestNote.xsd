@@ -18,11 +18,8 @@
       "format": "int64"
     },
     "time_off_request_id": {
-      "type": "array",
-      "items": {
-        "type": "integer",
-        "format": "int64"
-      }
+      "type": "integer",
+      "format": "int64"
     },
     "user_id": {
       "type": "integer",

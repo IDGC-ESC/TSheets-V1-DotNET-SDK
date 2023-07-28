@@ -20,6 +20,7 @@
 namespace Intuit.TSheets.Client.Serialization.Converters
 {
     using System;
+    using Intuit.TSheets.Client.Extensions;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
@@ -45,6 +46,13 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         }
 
         /// <summary>
+        /// Determines whether this instance can convert the specified object type.
+        /// </summary>
+        /// <param name="objectType">Type of the object.</param>
+        /// <returns>true if this instance can convert the specified object type; otherwise, false.</returns>
+        public override bool CanConvert(Type objectType) => objectType.IsAssignableToAny(typeof(DateTimeOffset?), typeof(DateTime?));
+
+        /// <summary>
         /// During serialization, writes the JSON representation of the object.
         /// </summary>
         /// <param name="writer">The <see cref="JsonWriter"/> into which to write.</param>
@@ -57,7 +65,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
             string valueToWrite = string.Empty;
             if (temp.HasValue && !temp.Value.Equals(DateTimeOffset.MinValue))
             {
-                valueToWrite = temp.Value.ToString(Format);
+                valueToWrite = temp.Value.ToString(DateTimeFormat);
             }
 
             writer.WriteValue(valueToWrite);

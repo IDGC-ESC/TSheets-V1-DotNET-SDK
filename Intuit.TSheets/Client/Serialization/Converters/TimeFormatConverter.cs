@@ -24,7 +24,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
     /// <summary>
     /// A custom converter for serializing DateTime properties in time-only format.
     /// </summary>
-    internal class TimeFormatConverter : IsoDateTimeConverter
+    public class TimeFormatConverter : IsoDateTimeConverter
     {
         /// <summary>
         /// The format for representing the time-only portion of a date/time value.

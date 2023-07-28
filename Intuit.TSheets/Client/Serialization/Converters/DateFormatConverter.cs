@@ -21,6 +21,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
 {
     using System;
     using System.Globalization;
+    using Intuit.TSheets.Client.Extensions;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
@@ -44,6 +45,13 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         {
             DateTimeFormat = DateOnlyFormat;
         }
+
+        /// <summary>
+        /// Determines whether this instance can convert the specified object type.
+        /// </summary>
+        /// <param name="objectType">Type of the object.</param>
+        /// <returns>true if this instance can convert the specified object type; otherwise, false.</returns>
+        public override bool CanConvert(Type objectType) => objectType.IsAssignableTo(typeof(DateTime?));
 
         /// <summary>
         /// During serialization, writes a date string from the <see cref="DateTimeOffset"/> object.

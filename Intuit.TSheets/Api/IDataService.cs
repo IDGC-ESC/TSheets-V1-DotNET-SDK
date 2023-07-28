@@ -20,12 +20,8 @@
 namespace Intuit.TSheets.Api
 {
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
-    using Intuit.TSheets.Client.Core;
-    using Intuit.TSheets.Client.RequestFlow.Contexts;
-    using Intuit.TSheets.Client.Utilities;
     using Intuit.TSheets.Model;
     using Intuit.TSheets.Model.Filters;
     using CustomFieldItemFilter = Intuit.TSheets.Model.CustomFieldItemFilter;

@@ -70,7 +70,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
             // Get the various supplemental data sections, i.e. "users", "jobcodes", etc.
             IEnumerable<JToken> sections = supplementalDataSection.Children();
 
-            var serializer = new JsonSerializer();
+            //JsonSerializer serializer = new JsonSerializer();
             foreach (JToken section in sections)
             {
                 // Get a function delegate which knows how to instantiate the correct object
@@ -86,20 +86,24 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
                     {
                         // Get a new object instance and "fill" it by deserializing from the json
                         IIdentifiable entity = createInstance();
-                        JsonReader reader = ((JObject)item).CreateReader();
 
-                        serializer.Populate(reader, entity);
-
-                        // Write it to our set of all supplemental data objects
-                        context.ResultsMeta.SupplementalData.AddOrUpdate(entity);
-
-                        // Maintain some counts for logging purposes
-                        if (!sectionItemCount.ContainsKey(sectionName))
+                        string itemJson = item.ToString();
+                        if (!string.IsNullOrWhiteSpace(itemJson?.TrimStart('{').TrimEnd('}')))
                         {
-                            sectionItemCount.Add(sectionName, 0);
-                        }
+                            JsonConvert.PopulateObject(itemJson, entity);
+                            // TODO: Verify this replacement: serializer.Populate(reader, entity);
 
-                        sectionItemCount[sectionName]++;
+                            // Write it to our set of all supplemental data objects
+                            context.ResultsMeta.SupplementalData.AddOrUpdate(entity);
+
+                            // Maintain some counts for logging purposes
+                            if (!sectionItemCount.ContainsKey(sectionName))
+                            {
+                                sectionItemCount.Add(sectionName, 0);
+                            }
+
+                            sectionItemCount[sectionName]++;
+                        }
                     }
                 }
                 else

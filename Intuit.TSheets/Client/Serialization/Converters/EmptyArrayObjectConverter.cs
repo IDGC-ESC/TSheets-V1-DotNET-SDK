@@ -20,7 +20,9 @@
 namespace Intuit.TSheets.Client.Serialization.Converters
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
+    using Intuit.TSheets.Client.Extensions;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using Newtonsoft.Json.Serialization;
@@ -45,7 +47,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
     ///     ]
     /// }
     /// </summary>
-    internal class EmptyArrayObjectConverter : JsonConverter
+    public class EmptyArrayObjectConverter : JsonConverter
     {
         /// <summary>
         /// Gets a value indicating whether this converter can read JSON.
@@ -57,7 +59,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// </summary>
         /// <param name="objectType">Type of the object.</param>
         /// <returns>true to indicate the type can be converted</returns>
-        public override bool CanConvert(Type objectType) => true;
+        public override bool CanConvert(Type objectType) => objectType.IsAssignableTo(typeof(IEnumerable<>)) && objectType != typeof(string);
 
         /// <summary>
         /// During serialization, writes the JSON representation of the object.
@@ -99,8 +101,10 @@ namespace Intuit.TSheets.Client.Serialization.Converters
                 case JsonToken.StartObject:
                 {
                     JsonContract contract = serializer.ContractResolver.ResolveContract(objectType);
-                    existingValue = existingValue ?? contract.DefaultCreator();
-                    serializer.Populate(reader, existingValue);
+                    existingValue ??= contract.DefaultCreator();
+
+                    string json = reader.GetJson();
+                    JsonConvert.PopulateObject(json, existingValue);
                     return existingValue;
                 }
 

@@ -48,7 +48,7 @@ namespace Intuit.TSheets.Client.Extensions
 
             return pairs == null
                 ? string.Empty
-                : string.Join("&", pairs);
+                : string.Join("&", pairs).Replace("\"", "");
         }
     }
 }

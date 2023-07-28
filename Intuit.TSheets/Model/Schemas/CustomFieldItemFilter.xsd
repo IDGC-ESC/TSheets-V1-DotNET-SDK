@@ -48,13 +48,15 @@
         "Jobcodes",
         "Users",
         "Groups",
-        "TimeOffRequests"
+        "TimeOffRequests",
+        "TimeOffRequestEntries"
       ],
       "enum": [
         0,
         1,
         2,
-        3
+        3,
+        4
       ]
     }
   }
