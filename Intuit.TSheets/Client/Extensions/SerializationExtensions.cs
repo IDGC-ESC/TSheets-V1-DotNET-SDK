@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using Intuit.TSheets.Api;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -12,38 +13,27 @@ namespace Intuit.TSheets.Client.Extensions
     {
         public static string ToJson<T>(this T obj)
         {
-            string json;
-            try
+            string json = null;
+            if (obj is JObject)
             {
-                json = JsonConvert.SerializeObject(obj, Formatting.Indented);
+                json = obj.ToString();
             }
-            catch (Exception)
+            else
             {
-                json = null;
+                try
+                {
+                    json = JsonConvert.SerializeObject(obj, Formatting.Indented, DataService.Settings);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
+            
             return json;
         }
 
-        public static T FromJson<T>(this object item)
-        {
-            T result = default;
-
-            if (item != null)
-            {
-                string json = item.ToJson();
-                if (!string.IsNullOrWhiteSpace(json))
-                {
-                    while (json.StartsWith("{{") && json.EndsWith("}}"))
-                    {
-                        json = json.Substring(1, json.Length - 2);
-                    }
-
-                    result = JsonConvert.DeserializeObject<T>(json);
-                }
-            }
-
-            return result;
-        }
+        public static T FromJson<T>(this object item) => item.ToJson().FromJson<T>();
 
         public static T FromJson<T>(this string json)
         {
@@ -57,6 +47,11 @@ namespace Intuit.TSheets.Client.Extensions
 
                 JObject obj = JObject.Parse(json);
                 result = obj.ToObject<T>();
+
+                if (result == null)
+                {
+                    result = JsonConvert.DeserializeObject<T>(json);
+                }
             }
             
             return result;
