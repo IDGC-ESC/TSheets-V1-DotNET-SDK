@@ -61,6 +61,8 @@ namespace Intuit.TSheets.Api
                     settings.CheckAdditionalContent = false;
                     settings.NullValueHandling = NullValueHandling.Ignore;
                     settings.Formatting = Formatting.Indented;
+                    settings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
+                    settings.DateParseHandling = DateParseHandling.DateTimeOffset;
                     foreach (JsonConverter converter in Converters)
                     {
                         settings.Converters.Add(converter);
