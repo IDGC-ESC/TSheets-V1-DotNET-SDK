@@ -20,6 +20,7 @@
 namespace Intuit.TSheets.Client.Serialization.Converters
 {
     using System;
+    using System.Linq;
     using Intuit.TSheets.Client.Extensions;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
@@ -30,6 +31,8 @@ namespace Intuit.TSheets.Client.Serialization.Converters
     /// </summary>
     public class BoolStringConverter : JsonConverter
     {
+        private static readonly string[] TrueStrings = { Convert.ToString(true), DefaultTrueString };
+
         private const string DefaultTrueString = "yes";
         private const string DefaultFalseString = "no";
 
@@ -88,8 +91,8 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var input = Convert.ToString(reader?.Value);
-
-            return input?.Equals(this.trueString, StringComparison.InvariantCultureIgnoreCase);
+            bool result = Array.Exists(TrueStrings, x => x.Equals(input, StringComparison.InvariantCultureIgnoreCase));
+            return result;
         }
 
         /// <summary>

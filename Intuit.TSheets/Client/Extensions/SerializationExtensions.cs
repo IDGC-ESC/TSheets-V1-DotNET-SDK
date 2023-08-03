@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Intuit.TSheets.Api;
 using Newtonsoft.Json;
@@ -11,10 +12,27 @@ namespace Intuit.TSheets.Client.Extensions
 {
     internal static class SerializationExtensions
     {
+        public static List<T> DeserializePathToList<T>(this JObject obj, string path)
+        {
+            if (obj is null)
+            {
+                return new();
+            }
+
+            if (path.EndsWith(".*"))
+            {
+                path = path.Substring(0, path.Length - 2);
+            }
+
+            JToken token = obj.SelectToken(path);
+            List<T> results = token.FromJson<Dictionary<string, T>>().Select(t => t.Value).ToList();
+            return results;
+        }
+
         public static string ToJson<T>(this T obj)
         {
             string json = null;
-            if (obj is JObject)
+            if (obj is JObject || obj is JToken)
             {
                 json = obj.ToString();
             }

@@ -53,17 +53,8 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
             ILogger logger,
             CancellationToken cancellationToken)
         {
-            var results = new Results<T>();
-
             JObject document = JObject.Parse(context.ResponseContent);
-            string path = context.JsonPath();
-
-            JToken resultsToken = document.SelectToken(path.Replace(".*",""));
-            Dictionary<string, T> test = resultsToken.FromJson<Dictionary<string, T>>();
-
-            results.Items = test.Values.ToList();
-            context.Results = results;
-
+            context.Results = new() { Items = document.DeserializePathToList<T>(context.JsonPath()) };
             return Task.CompletedTask;
         }
     }

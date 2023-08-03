@@ -42,15 +42,28 @@ namespace Intuit.TSheets.Model
         [JsonProperty("status")]
         public TimeOffRequestStatus Status { get; set; }
 
+        [JsonConverter(typeof(BoolStringConverter))]
         [JsonProperty("active")]
         public bool Active { get; set; }
 
         [JsonConverter(typeof(DateTimeFormatConverter))]
+        [JsonSchema(JsonObjectType.String)]
         [JsonProperty("created")]
         public DateTimeOffset Created { get; set; }
 
         [JsonConverter(typeof(DateTimeFormatConverter))]
+        [JsonSchema(JsonObjectType.String)]
         [JsonProperty("last_modified")]
         public DateTimeOffset LastModified { get; set; }
+
+        [JsonConverter(typeof(DateFormatConverter))]
+        [JsonSchema(JsonObjectType.String)]
+        [JsonProperty(propertyName: "start_date")]
+        public DateTimeOffset StartDate { get; set; }
+
+        [JsonConverter(typeof(DateFormatConverter))]
+        [JsonSchema(JsonObjectType.String)]
+        [JsonProperty("end_date")]
+        public DateTimeOffset EndDate { get; set; }
     }
 }
