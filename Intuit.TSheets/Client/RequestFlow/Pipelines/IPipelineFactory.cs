@@ -28,7 +28,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
     /// <remarks>
     /// Exists for the purpose of unit test dependency injection.
     /// </remarks>
-    internal interface IPipelineFactory
+    public interface IPipelineFactory
     {
         /// <summary>
         /// Returns a request pipeline.

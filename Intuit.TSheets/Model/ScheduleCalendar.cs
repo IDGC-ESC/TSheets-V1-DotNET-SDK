@@ -35,26 +35,26 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets the name of the schedule calendar.
         /// </summary>
         [JsonProperty("name")]
-        public string Name { get; internal set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets date/time when this schedule calendar was last modified.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets date/time when this schedule calendar was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
     }
 }

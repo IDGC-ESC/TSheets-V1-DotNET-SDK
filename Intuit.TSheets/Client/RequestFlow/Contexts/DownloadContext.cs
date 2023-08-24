@@ -28,14 +28,14 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
     /// </summary>
     /// <typeparam name="T">The type of data entity.</typeparam>
     [JsonObject]
-    internal class DownloadContext<T> : PipelineContext<T>
+    public class DownloadContext<T> : PipelineContext<T>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DownloadContext{T}"/> class.
         /// </summary>
         /// <param name="endpoint">The endpoint with which to interact.</param>
         /// <param name="filter">The filter for narrowing down the result set.</param>
-        internal DownloadContext(EndpointName endpoint, EntityFilter filter)
+        public DownloadContext(EndpointName endpoint, EntityFilter filter)
             : base(MethodType.Get, endpoint)
         {
             Filter = filter ?? new NullFilter();
@@ -45,12 +45,12 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
         /// Gets or sets the instance of <see cref="IEntityFilter"/>, for narrowing down the result set.
         /// </summary>
         [JsonProperty]
-        internal IEntityFilter Filter { get; set; }
+        public IEntityFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or sets the array of bytes representing the item downloaded.
         /// </summary>
         [JsonProperty]
-        internal byte[] RawResponseContent { get; set; }
+        public byte[] RawResponseContent { get; set; }
     }
 }

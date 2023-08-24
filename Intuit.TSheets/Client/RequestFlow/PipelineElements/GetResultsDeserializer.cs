@@ -19,8 +19,6 @@
 
 namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
 {
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
     using Intuit.TSheets.Client.Extensions;
@@ -31,7 +29,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that deserializes the response from a "get" operation.
     /// </summary>
-    internal class GetResultsDeserializer : PipelineElement<GetResultsDeserializer>
+    public class GetResultsDeserializer : PipelineElement<GetResultsDeserializer>
     {
         private GetResultsDeserializer()
         {

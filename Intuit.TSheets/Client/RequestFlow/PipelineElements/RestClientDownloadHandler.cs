@@ -28,7 +28,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that invokes the http rest client to perform a download operation.
     /// </summary>
-    internal class RestClientDownloadHandler : PipelineElement<RestClientDownloadHandler>
+    public class RestClientDownloadHandler : PipelineElement<RestClientDownloadHandler>
     {
         private RestClientDownloadHandler()
         {

@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
     /// A list of stateless pipeline elements that are called in sequence,
     /// collectively to process a single TSheets API method call.
     /// </summary>
-    internal class RequestPipeline : IPipeline
+    public class RequestPipeline : IPipeline
     {
          /// <summary>
         /// Initializes a new instance of the <see cref="RequestPipeline"/> class,
@@ -40,7 +40,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
         /// <param name="pipelineElements">
         /// One or more elements with which to initialize the pipeline.
         /// </param>
-        internal RequestPipeline(params IPipelineElement[] pipelineElements)
+        public RequestPipeline(params IPipelineElement[] pipelineElements)
         {
             PipelineElements = new List<IPipelineElement>(pipelineElements);
             Name = GetType().Name;
@@ -49,12 +49,12 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
         /// <summary>
         /// Gets the list of pipeline elements.
         /// </summary>
-        internal List<IPipelineElement> PipelineElements { get; }
+        public List<IPipelineElement> PipelineElements { get; }
 
         /// <summary>
         /// Gets the name of the pipeline.
         /// </summary>
-        internal string Name { get; }
+        public string Name { get; }
 
         /// <summary>
         /// Calls each pipeline element in sequence.

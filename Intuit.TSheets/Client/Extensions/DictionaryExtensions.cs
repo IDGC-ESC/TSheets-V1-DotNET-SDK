@@ -21,12 +21,25 @@ namespace Intuit.TSheets.Client.Extensions
 {
     using System;
     using System.Collections.Generic;
+    using Intuit.TSheets.Api;
 
     /// <summary>
-    /// For internal use, extension methods for Dictionary&lt;string, string&gt; objects.
+    /// For public use, extension methods for Dictionary&lt;string, string&gt; objects.
     /// </summary>
-    internal static class DictionaryExtensions
+    public static class DictionaryExtensions
     {
+        public static Dictionary<string, string> AsFiltersWithRequestOptions(this Dictionary<string, string> filters, bool? supplemental_data, int? page, int? per_page)
+        {
+            filters ??= new();
+            filters.Add(nameof(supplemental_data), Convert.ToString(supplemental_data.GetValueOrDefault()));
+            filters.Add(nameof(page), Convert.ToString(page ?? 1));
+            filters.Add(nameof(per_page), Convert.ToString(per_page ?? 50));
+            return filters;
+        }
+
+        public static Dictionary<string, string> AsFiltersWithRequestOptions(this Dictionary<string, string> filters, RequestOptions requestOptions)
+            => filters.AsFiltersWithRequestOptions(requestOptions.IncludeSupplementalData, requestOptions.Page, requestOptions.PerPage);
+
         /// <summary>
         /// Builds and returns a url encoded query string.
         /// </summary>

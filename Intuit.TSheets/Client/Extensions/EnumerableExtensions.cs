@@ -22,9 +22,9 @@ namespace Intuit.TSheets.Client.Extensions
     using System.Collections.Generic;
 
     /// <summary>
-    /// For internal use, extension methods for IEnumerable&lt;T&gt; objects.
+    /// For public use, extension methods for IEnumerable&lt;T&gt; objects.
     /// </summary>
-    internal static class EnumerableExtensions
+    public static class EnumerableExtensions
     {
         /// <summary>
         /// Given an enumerable of objects of type T, split into batches of given size.
@@ -33,7 +33,7 @@ namespace Intuit.TSheets.Client.Extensions
         /// <param name="source">The set of objects to be split into batches.</param>
         /// <param name="count">The number of items to include in each batch.</param>
         /// <returns>The set of batches.</returns>
-        internal static IEnumerable<IEnumerable<T>> MakeBatchesOfSize<T>(this IEnumerable<T> source, int count)
+        public static IEnumerable<IEnumerable<T>> MakeBatchesOfSize<T>(this IEnumerable<T> source, int count)
         {
             var batch = new List<T>();
             foreach (T item in source)

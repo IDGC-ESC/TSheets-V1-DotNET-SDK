@@ -36,7 +36,7 @@ namespace Intuit.TSheets.Client.Core
     /// <summary>
     /// An HTTP Client to the TSheets Rest API
     /// </summary>
-    internal class RestClient : IRestClient
+    public class RestClient : IRestClient
     {
         private const string ProductName = "TSheets-V1-DotNET-SDK";
         private const string ProductVersion = "2.0";
@@ -74,7 +74,7 @@ namespace Intuit.TSheets.Client.Core
         /// <param name="logger">
         /// Logging provider, an instance of <see cref="ILogger"/>.
         /// </param>
-        internal RestClient(
+        public RestClient(
             DataServiceContext context,
             HttpClient httpClient,
             ILogger logger)

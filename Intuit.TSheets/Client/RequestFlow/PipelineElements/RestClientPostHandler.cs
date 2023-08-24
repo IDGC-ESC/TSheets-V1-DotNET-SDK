@@ -27,7 +27,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that invokes the http rest client to perform a "create" operation.
     /// </summary>
-    internal class RestClientPostHandler : PipelineElement<RestClientPostHandler>
+    public class RestClientPostHandler : PipelineElement<RestClientPostHandler>
     {
         private RestClientPostHandler()
         {

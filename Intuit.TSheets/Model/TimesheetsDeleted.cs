@@ -38,46 +38,46 @@ namespace Intuit.TSheets.Model
         /// Gets the id of the timesheet.
         /// </summary>
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets the user id for the user that this timesheet belongs to.
         /// </summary>
         [JsonProperty("user_id")]
-        public long? UserId { get; internal set; }
+        public long? UserId { get; set; }
 
         /// <summary>
         /// Gets the id for the jobcode that this timesheet is recorded against.
         /// </summary>
         [JsonProperty("jobcode_id")]
-        public long? JobcodeId { get; internal set; }
+        public long? JobcodeId { get; set; }
 
         /// <summary>
         /// Gets the date/time that represents the start time of this timesheet.
         /// </summary>
         [JsonConverter(typeof(DateTimeFormatConverter))]
         [JsonProperty("start")]
-        public DateTimeOffset? Start { get; internal set; }
+        public DateTimeOffset? Start { get; set; }
 
         /// <summary>
         /// Gets the date/time that represents the end time of this timesheet.
         /// </summary>
         [JsonConverter(typeof(DateTimeFormatConverter))]
         [JsonProperty("end")]
-        public DateTimeOffset? End { get; internal set; }
+        public DateTimeOffset? End { get; set; }
 
         /// <summary>
         /// Gets the timesheet's date.
         /// </summary>
         [JsonConverter(typeof(DateFormatConverter))]
         [JsonProperty("date")]
-        public DateTimeOffset? Date { get; internal set; }
+        public DateTimeOffset? Date { get; set; }
 
         /// <summary>
         /// Gets the total number of seconds recorded for this timesheet.
         /// </summary>
         [JsonProperty("duration")]
-        public int? Duration { get; internal set; }
+        public int? Duration { get; set; }
 
         /// <summary>
         /// Gets the value indication whether or not the timesheet is locked.
@@ -90,13 +90,13 @@ namespace Intuit.TSheets.Model
         /// object that owns the timesheet.
         /// </remarks>
         [JsonProperty("locked")]
-        public int? Locked { get; internal set; }
+        public int? Locked { get; set; }
 
         /// <summary>
         /// Gets notes associated with this timesheet.
         /// </summary>
         [JsonProperty("notes")]
-        public string Notes { get; internal set; }
+        public string Notes { get; set; }
 
         /// <summary>
         /// Gets the <see cref="CustomFieldItem"/> objects that are associated with the timesheet.
@@ -105,19 +105,19 @@ namespace Intuit.TSheets.Model
         /// This property is present only if the Advanced Tracking Add-On is installed.
         /// </remarks>
         [JsonProperty("customfields")]
-        public IDictionary<string, string> CustomFields { get; internal set; }
+        public IDictionary<string, string> CustomFields { get; set; }
 
         /// <summary>
         /// Gets the date/time when this timesheet was created.
         /// </summary>
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
 
         /// <summary>
         /// Gets the date/time when this timesheet was last modified.
         /// </summary>
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the type of the timesheet.
@@ -129,6 +129,6 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("type")]
-        public TimesheetType? TimesheetType { get; internal set; }
+        public TimesheetType? TimesheetType { get; set; }
     }
 }

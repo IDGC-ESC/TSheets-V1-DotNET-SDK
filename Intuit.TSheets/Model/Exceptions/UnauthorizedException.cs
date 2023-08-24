@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for unauthorized.
         /// </summary>
-        internal const int HttpCode = 401;
+        public const int HttpCode = 401;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnauthorizedException"/> class.

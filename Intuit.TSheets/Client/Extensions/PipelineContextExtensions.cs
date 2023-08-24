@@ -25,11 +25,11 @@ namespace Intuit.TSheets.Client.Extensions
     using Intuit.TSheets.Client.RequestFlow.Contexts;
 
     /// <summary>
-    /// For internal use, extension methods for PipelineContext&lt;T&gt; object.
+    /// For public use, extension methods for PipelineContext&lt;T&gt; object.
     /// </summary>
-    internal static class PipelineContextExtensions
+    public static class PipelineContextExtensions
     {
-        private static readonly Dictionary<EndpointName, string> JsonPaths = new Dictionary<EndpointName, string>
+        public static readonly IReadOnlyDictionary<EndpointName, string> JsonPaths = new Dictionary<EndpointName, string>
         {
             { EndpointName.CurrentUser, "results.users.*" },
             { EndpointName.CustomFieldItemFilters, "results.customfielditem_filters.*" },
@@ -67,7 +67,7 @@ namespace Intuit.TSheets.Client.Extensions
         /// <typeparam name="T">The entity type.</typeparam>
         /// <param name="context">Contextual information for the method call.</param>
         /// <returns>The JSON path string.</returns>
-        internal static string JsonPath<T>(this PipelineContext<T> context)
+        public static string JsonPath<T>(this PipelineContext<T> context)
         {
             if (!JsonPaths.ContainsKey(context.Endpoint))
             {

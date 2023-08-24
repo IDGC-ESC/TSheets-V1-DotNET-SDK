@@ -28,18 +28,18 @@ namespace Intuit.TSheets.Api
     /// This class is exclusively contained within <see cref="ErrorResponse"/>
     /// </remarks>
     [JsonObject]
-    internal class ErrorResponseDetail
+    public class ErrorResponseDetail
     {
         /// <summary>
         /// Gets or sets the HTTP error code.
         /// </summary>
         [JsonProperty("code")]
-        public int Code { get; internal set; }
+        public int Code { get; set; }
 
         /// <summary>
         /// Gets or sets the descriptive error message.
         /// </summary>
         [JsonProperty("message")]
-        public string Message { get; internal set; }
+        public string Message { get; set; }
     }
 }

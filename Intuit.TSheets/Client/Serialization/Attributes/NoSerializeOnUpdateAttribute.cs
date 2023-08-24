@@ -26,7 +26,7 @@ namespace Intuit.TSheets.Client.Serialization.Attributes
     /// from being serialized prior to a POST call.
     /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
-    internal sealed class NoSerializeOnUpdateAttribute : Attribute
+    public sealed class NoSerializeOnUpdateAttribute : Attribute
     {
     }
 }

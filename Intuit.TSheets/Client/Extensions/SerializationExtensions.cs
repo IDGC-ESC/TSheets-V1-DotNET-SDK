@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Intuit.TSheets.Client.Extensions
 {
-    internal static class SerializationExtensions
+    public static class SerializationExtensions
     {
         public static List<T> DeserializePathToList<T>(this JObject obj, string path)
         {

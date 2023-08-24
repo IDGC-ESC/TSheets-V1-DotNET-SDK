@@ -39,7 +39,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
     /// To clients of this pipeline, it is as if there is no limit to the number of entities
     /// that can be created or updated in a single call.
     /// </remarks>
-    internal class AutoBatchingPipeline : IPipeline
+    public class AutoBatchingPipeline : IPipeline
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoBatchingPipeline"/> class.
@@ -47,7 +47,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
         /// <param name="innerPipeline">
         /// A standard pipeline instance which handles calls for each batch.
         /// </param>
-        internal AutoBatchingPipeline(IPipeline innerPipeline)
+        public AutoBatchingPipeline(IPipeline innerPipeline)
         {
             InnerPipeline = innerPipeline;
         }
@@ -55,12 +55,12 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
         /// <summary>
         /// The maximum number of items in a create or update batch.
         /// </summary>
-        internal static int MaxItemsPerBatch => 50;
+        public static int MaxItemsPerBatch => 50;
 
         /// <summary>
         /// Gets or sets the standard pipeline instance which handles calls for each batch.
         /// </summary>
-        internal IPipeline InnerPipeline { get; set; }
+        public IPipeline InnerPipeline { get; set; }
 
         /// <summary>
         /// Splits the set of entities to be created or updated into batches of 50,

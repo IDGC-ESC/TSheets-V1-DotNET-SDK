@@ -29,7 +29,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that validates input data for a "create" operation.
     /// </summary>
-    internal class CreateContextValidator : PipelineElement<CreateContextValidator>
+    public class CreateContextValidator : PipelineElement<CreateContextValidator>
     {
         private CreateContextValidator()
         {

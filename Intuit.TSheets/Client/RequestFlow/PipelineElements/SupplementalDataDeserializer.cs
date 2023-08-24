@@ -33,7 +33,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that deserializes the supplemental data section of a TSheets API method response.
     /// </summary>
-    internal class SupplementalDataDeserializer : PipelineElement<SupplementalDataDeserializer>
+    public class SupplementalDataDeserializer : PipelineElement<SupplementalDataDeserializer>
     {
         private const string JsonPath = "supplemental_data";
 

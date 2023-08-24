@@ -72,7 +72,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the id for the user that this geolocation belongs to.

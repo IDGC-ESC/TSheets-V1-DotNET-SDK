@@ -90,7 +90,7 @@ namespace Intuit.TSheets.Api
         /// <remarks>
         /// Not a thread-safe method.
         /// </remarks>
-        internal void AddOrUpdate(IIdentifiable entity)
+        public void AddOrUpdate(IIdentifiable entity)
         {
             Type type = entity.GetType();
             if (!this.supplementalData.ContainsKey(type))
@@ -108,7 +108,7 @@ namespace Intuit.TSheets.Api
         /// <remarks>
         /// Not a thread-safe method.
         /// </remarks>
-        internal void AddOrUpdate(IEnumerable<IIdentifiable> entities)
+        public void AddOrUpdate(IEnumerable<IIdentifiable> entities)
         {
             foreach (IIdentifiable entity in entities)
             {

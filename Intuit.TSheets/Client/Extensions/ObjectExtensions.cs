@@ -23,12 +23,16 @@ namespace Intuit.TSheets.Client.Extensions
     using System;
     using System.Collections.Generic;
     using System.Reflection;
+    using Intuit.TSheets.Api;
+    using Newtonsoft.Json;
 
     /// <summary>
-    /// For internal use, extension methods for object.
+    /// For public use, extension methods for object.
     /// </summary>
-    internal static class ObjectExtensions
+    public static class ObjectExtensions
     {
+        public static string ToJson(this object obj) => obj == null ? string.Empty : JsonConvert.SerializeObject(obj, DataService.Settings);
+
         public static bool HasCustomAttribute<T>(this T _, Type attributeType) => typeof(T).HasCustomAttribute(attributeType);
 
         public static bool HasCustomAttribute(this Type type, Type attributeType) => type.GetCustomAttribute(attributeType) != null;
@@ -43,7 +47,7 @@ namespace Intuit.TSheets.Client.Extensions
         /// Throws an instance of <see cref="ArgumentNullException"/> if the value is null.
         /// </summary>
         /// <param name="value">The value to test for null.</param>
-        internal static void ThrowIfNull(this object value)
+        public static void ThrowIfNull(this object value)
         {
             if (value == null)
             {

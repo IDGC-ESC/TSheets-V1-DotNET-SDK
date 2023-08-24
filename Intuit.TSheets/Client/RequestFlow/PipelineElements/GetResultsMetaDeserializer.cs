@@ -28,7 +28,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that deserializes paging information from the response from a retrieval operation.
     /// </summary>
-    internal class GetResultsMetaDeserializer : PipelineElement<GetResultsMetaDeserializer>
+    public class GetResultsMetaDeserializer : PipelineElement<GetResultsMetaDeserializer>
     {
         private const string MoreTokenPath = "more";
 

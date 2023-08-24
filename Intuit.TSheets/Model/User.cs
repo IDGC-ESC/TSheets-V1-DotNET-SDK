@@ -60,7 +60,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the first name of user.
@@ -133,7 +133,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("email_verified")]
-        public bool? EmailVerified { get; internal set; }
+        public bool? EmailVerified { get; set; }
 
         /// <summary>
         /// Gets or sets the payroll id associated with this user
@@ -169,49 +169,49 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the date/time when this user last performed any action.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_active")]
-        public DateTimeOffset? LastActive { get; internal set; }
+        public DateTimeOffset? LastActive { get; set; }
 
         /// <summary>
         /// Gets the date/time when this user was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
 
         /// <summary>
         /// Gets the sub-domain portion of the client account url identifier associated with this user.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("client_url")]
-        public string ClientSubDomain { get; internal set; }
+        public string ClientSubDomain { get; set; }
 
         /// <summary>
         /// Gets the client account name identifier associated with the user.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("company_name")]
-        public string CompanyName { get; internal set; }
+        public string CompanyName { get; set; }
 
         /// <summary>
         /// Gets the Url identifier associated with this user's profile image.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("profile_image_url")]
-        public Uri ProfileImageUrl { get; internal set; }
+        public Uri ProfileImageUrl { get; set; }
 
         /// <summary>
         /// Gets the list of jobcode identifiers and their respective PTO balances for this user.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("pto_balances")]
-        public IReadOnlyDictionary<long, int> PtoBalances { get; internal set; }
+        public IReadOnlyDictionary<long, int> PtoBalances { get; set; }
 
         /// <summary>
         /// Gets or sets the latest date up to which this user has submitted timesheets.
@@ -232,7 +232,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("manager_of_group_ids")]
-        public IReadOnlyList<long> ManagerOfGroups { get; internal set; }
+        public IReadOnlyList<long> ManagerOfGroups { get; set; }
 
         /// <summary>
         /// Gets or sets the value indicating whether or not a password change is required.
@@ -253,7 +253,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [Obsolete("This property is deprecated for Create and Update operations.")]
         [JsonProperty("password")]
-        public bool? Password { internal get; set; }
+        public bool? Password { get; set; }
 
         /// <summary>
         /// Gets or sets the login pin (for logging into a kiosk or similar.)
@@ -269,7 +269,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [NoSerializeOnWrite]
         [JsonProperty("pay_rate")]
-        public float? PayRate { get; internal set; }
+        public float? PayRate { get; set; }
 
         /// <summary>
         /// Gets the time frame to which this user's pay rate applies.
@@ -281,7 +281,7 @@ namespace Intuit.TSheets.Model
         [NoSerializeOnWrite]
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("pay_interval")]
-        public PayInterval? PayInterval { get; internal set; }
+        public PayInterval? PayInterval { get; set; }
 
         /// <summary>
         /// Gets or sets the permission settings that apply to this user.
@@ -294,6 +294,6 @@ namespace Intuit.TSheets.Model
         /// </summary>               
         [NoSerializeOnWrite]
         [JsonProperty("customfields")]
-        public IDictionary<string, string> CustomFields { get; internal set; }
+        public IDictionary<string, string> CustomFields { get; set; }
     }
 }

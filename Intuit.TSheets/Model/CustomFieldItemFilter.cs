@@ -41,7 +41,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate] 
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the id for the custom field that this filter belongs to.
@@ -92,6 +92,6 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
     }
 }

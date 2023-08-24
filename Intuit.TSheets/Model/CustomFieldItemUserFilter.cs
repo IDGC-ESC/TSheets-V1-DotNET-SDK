@@ -39,7 +39,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate] 
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the entities filter type.
@@ -55,7 +55,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the filtered custom field items.
@@ -65,6 +65,6 @@ namespace Intuit.TSheets.Model
         /// and the value is an array of item ids to which the jobcode is assigned.
         /// </remarks>
         [JsonProperty("filtered_customfielditems")]
-        public IDictionary<string, IList<long>> FilteredCustomFieldItems { get; internal set; }
+        public IDictionary<string, IList<long>> FilteredCustomFieldItems { get; set; }
     }
 }

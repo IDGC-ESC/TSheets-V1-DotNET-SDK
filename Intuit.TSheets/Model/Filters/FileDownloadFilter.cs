@@ -22,16 +22,16 @@ namespace Intuit.TSheets.Model.Filters
     using Newtonsoft.Json;
 
     /// <summary>
-    /// For internal use, converts an id into a filter for selecting the specific <see cref="File"/> to retrieve.
+    /// For public use, converts an id into a filter for selecting the specific <see cref="File"/> to retrieve.
     /// </summary>
     [JsonObject]
-    internal class FileDownloadFilter : EntityFilter
+    public class FileDownloadFilter : EntityFilter
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FileDownloadFilter"/> class.
         /// </summary>
         /// <param name="id">The id of the file to download.</param>
-        internal FileDownloadFilter(long id)
+        public FileDownloadFilter(long id)
         {
             Id = id;
         }

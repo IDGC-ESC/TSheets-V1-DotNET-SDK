@@ -22,7 +22,7 @@ namespace Intuit.TSheets.Client.Core
     /// <summary>
     /// The endpoint names supported by the API
     /// </summary>
-    internal enum EndpointName
+    public enum EndpointName
     {
         Tests = 0,
         CurrentTotalsReports,

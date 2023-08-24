@@ -32,7 +32,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// on the pipeline context object that is passed in. 
     /// </summary>
     /// <typeparam name="TSingleton">The type of singleton pipeline element.</typeparam>
-    internal abstract class PipelineElement<TSingleton> : Singleton<TSingleton>, IPipelineElement
+    public abstract class PipelineElement<TSingleton> : Singleton<TSingleton>, IPipelineElement
         where TSingleton : class
     {
         /// <summary>
@@ -46,7 +46,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
         /// <summary>
         /// Gets the name of the pipeline element.
         /// </summary>
-        internal string Name { get; }
+        public string Name { get; }
 
         /// <summary>
         /// Centralizes trace logging for all pipeline stages.

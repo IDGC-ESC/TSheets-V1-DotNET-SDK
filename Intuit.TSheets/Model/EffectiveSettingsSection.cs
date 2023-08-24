@@ -34,13 +34,13 @@ namespace Intuit.TSheets.Model
         /// Gets the set of settings, expressed as key/value pairs
         /// </summary>
         [JsonProperty("settings")]
-        public IReadOnlyDictionary<string, object> Settings { get; internal set; }
+        public IReadOnlyDictionary<string, object> Settings { get; set; }
 
         /// <summary>
         /// Gets the date/time at which the setting was most recently modified.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
     }
 }

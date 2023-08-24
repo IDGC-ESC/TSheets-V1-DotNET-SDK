@@ -60,7 +60,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate] 
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the id of the user to which this assignment pertains.
@@ -89,13 +89,13 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the date/time when this jobcode assignment was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
     }
 }

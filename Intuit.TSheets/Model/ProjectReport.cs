@@ -33,6 +33,6 @@ namespace Intuit.TSheets.Model
         /// Gets the report data.
         /// </summary>
         [JsonProperty("project_report")]
-        public ProjectReportData Report { get; internal set; }
+        public ProjectReportData Report { get; set; }
     }
 }

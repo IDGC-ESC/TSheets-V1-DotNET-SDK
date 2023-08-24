@@ -37,7 +37,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets the name of the entity the location is mapped to.
@@ -47,32 +47,32 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("x_table")]
-        public LocationsMapXTableType? XTable { get; internal set; }
+        public LocationsMapXTableType? XTable { get; set; }
 
         /// <summary>
         /// Gets the id of the entity the location is mapped to.
         /// </summary>
         [JsonProperty("x_id")]
-        public long? XId { get; internal set; }
+        public long? XId { get; set; }
 
         /// <summary>
         /// Gets the id of the location that is mapped to the entity.
         /// </summary>
         [JsonProperty("location_id")]
-        public long? LocationId { get; internal set; }
+        public long? LocationId { get; set; }
 
         /// <summary>
         /// Gets the date/time when this locations map was last modified.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the date/time when this locations map was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
     }
 }

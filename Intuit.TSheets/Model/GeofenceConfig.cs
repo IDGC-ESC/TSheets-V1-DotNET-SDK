@@ -38,7 +38,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets the type of entity the geofence config is related to.
@@ -48,13 +48,13 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("type")]
-        public GeofenceConfigType? GeofenceConfigType { get; internal set; }
+        public GeofenceConfigType? GeofenceConfigType { get; set; }
 
         /// <summary>
         /// Gets the id of the entity the geofence config is related to.
         /// </summary>
         [JsonProperty("type_id")]
-        public long? TypeId { get; internal set; }
+        public long? TypeId { get; set; }
 
         /// <summary>
         /// Gets the status of this geofence config.
@@ -63,32 +63,32 @@ namespace Intuit.TSheets.Model
         /// If true, this geofence config is active. If false, this geofence config is archived.
         /// </remarks>
         [JsonProperty("active")]
-        public bool? Active { get; internal set; }
+        public bool? Active { get; set; }
 
         /// <summary>
         /// Gets the value indicating whether a geofence for the associated entity should be enabled.
         /// </summary>
         [JsonProperty("enabled")]
-        public bool? Enabled { get; internal set; }
+        public bool? Enabled { get; set; }
 
         /// <summary>
         /// Gets the size of the geofence.
         /// </summary>
         [JsonProperty("radius")]
-        public int? Radius { get; internal set; }
+        public int? Radius { get; set; }
 
         /// <summary>
         /// Gets the date/time when this geofence config was last modified.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the date/time when this geofence config was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
     }
 }

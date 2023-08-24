@@ -26,7 +26,7 @@ namespace Intuit.TSheets.Client.Utilities
     /// <summary>
     /// Internal helper class for mapping each endpoint name to its corresponding URI segment path.
     /// </summary>
-    internal static class EndpointMapper
+    public static class EndpointMapper
     {
         private static readonly Dictionary<EndpointName, string> EndpointMappings = new Dictionary<EndpointName, string>
         {
@@ -72,7 +72,7 @@ namespace Intuit.TSheets.Client.Utilities
         /// </summary>
         /// <param name="endpointName">The endpoint name</param>
         /// <returns>The associated endpoint</returns>
-        internal static string GetEndpoint(EndpointName endpointName)
+        public static string GetEndpoint(EndpointName endpointName)
         {
             if (!EndpointMappings.ContainsKey(endpointName))
             {

@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for expectation failed.
         /// </summary>
-        internal const int HttpCode = 417;
+        public const int HttpCode = 417;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExpectationFailedException"/> class.

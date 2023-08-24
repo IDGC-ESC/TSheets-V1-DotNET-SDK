@@ -25,7 +25,7 @@ namespace Intuit.TSheets.Client.Utilities
     /// <summary>
     /// Helper class for mapping error conditions to exceptions.
     /// </summary>
-    internal static class ExceptionMapper
+    public static class ExceptionMapper
     {
         /// <summary>
         /// Maps an HTTP error code to a new instance of its corresponding exception.
@@ -35,7 +35,7 @@ namespace Intuit.TSheets.Client.Utilities
         /// </remarks>
         /// <param name="httpCode">The HTTP error code</param>
         /// <returns>An instance of an exception deriving from <see cref="ApiException"/>.</returns>
-        internal static ApiException Map(int httpCode)
+        public static ApiException Map(int httpCode)
         {
             return Map(httpCode, string.Empty, string.Empty);
         }
@@ -48,7 +48,7 @@ namespace Intuit.TSheets.Client.Utilities
         /// <param name="message">The detailed error message.</param>
         /// <param name="innerException">The optional exception to be nested.</param>
         /// <returns>A derived class instance of an <see cref="ApiException"/> exception.</returns>
-        internal static ApiException Map(
+        public static ApiException Map(
             int httpCode,
             string errorText,
             string message,

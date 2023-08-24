@@ -30,7 +30,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that deserializes the response from a report retrieval operation.
     /// </summary>
-    internal class GetReportDeserializer : PipelineElement<GetReportDeserializer>
+    public class GetReportDeserializer : PipelineElement<GetReportDeserializer>
     {
         private GetReportDeserializer()
         {

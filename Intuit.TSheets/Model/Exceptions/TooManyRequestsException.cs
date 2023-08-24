@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for too many requests.
         /// </summary>
-        internal const int HttpCode = 429;
+        public const int HttpCode = 429;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TooManyRequestsException"/> class.

@@ -34,13 +34,13 @@ namespace Intuit.TSheets.Api
         /// If true, a follow-up call to retrieve the next page of results can be made.
         /// </remarks>
         [JsonProperty]
-        public bool More { get; internal set; }
+        public bool More { get; set; }
 
         /// <summary>
         /// Gets the current page number of results.
         /// </summary>
         [JsonProperty]
-        public int Page { get; internal set; }
+        public int Page { get; set; }
 
         /// <summary>
         /// Gets or sets additional objects related to the entities returned, <see cref="SupplementalData"/>

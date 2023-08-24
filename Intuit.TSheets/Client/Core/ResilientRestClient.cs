@@ -35,8 +35,15 @@ namespace Intuit.TSheets.Client.Core
     /// An HTTP Client to the TSheets Rest API that seamlessly retries calls when
     /// transient network errors are encountered.
     /// </summary>
-    internal class ResilientRestClient : IRestClient
+    public class ResilientRestClient : IRestClient
     {
+        public static ResilientRestClient GetInstance(DataServiceContext context,
+            RetrySettings retrySettings,
+            ILogger logger)
+        {
+            return new(context, retrySettings, logger);
+        }
+
         private const string LogContextKey = "LogContext";
         private const string MaxRetryCount = "MaxRetries";
         private const string RetryNumberKey = "RetryNumber";
@@ -57,7 +64,7 @@ namespace Intuit.TSheets.Client.Core
         /// <param name="logger">
         /// Logging provider, an instance of <see cref="ILogger"/>.
         /// </param>
-        internal ResilientRestClient(
+        public ResilientRestClient(
             DataServiceContext context,
             RetrySettings retrySettings,
             ILogger logger)
@@ -80,7 +87,7 @@ namespace Intuit.TSheets.Client.Core
         /// <param name="logger">
         /// Logging provider, an instance of <see cref="ILogger"/>.
         /// </param>
-        internal ResilientRestClient(
+        public ResilientRestClient(
             RetrySettings retrySettings,
             IRestClient restClient,
             ILogger logger)
@@ -203,7 +210,7 @@ namespace Intuit.TSheets.Client.Core
         /// <param name="timeSpan">The time to wait before retrying the call.</param>
         /// <param name="context">Contextual information about the retry.</param>
         /// <param name="logger">An instance of <see cref="ILogger"/>, for logging purposes.</param>
-        internal static void OnRetryCallback(
+        public static void OnRetryCallback(
             Exception exception,
             TimeSpan timeSpan,
             Context context,

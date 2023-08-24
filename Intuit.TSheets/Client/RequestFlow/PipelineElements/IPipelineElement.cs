@@ -27,7 +27,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// Interface for a pipeline element; a stateless singleton object which performs work on a pipeline context object.
     /// </summary>
-    internal interface IPipelineElement
+    public interface IPipelineElement
     {
         /// <summary>
         /// Perform work on the context object.

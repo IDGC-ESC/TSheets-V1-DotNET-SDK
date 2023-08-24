@@ -29,12 +29,12 @@ namespace Intuit.TSheets.Client.Utilities
     /// Class is JsonObject attributed for easy serialization during logging.
     /// </remarks>
     [JsonObject]
-    internal class LogContext
+    public class LogContext
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LogContext"/> class.
         /// </summary>
-        internal LogContext()
+        public LogContext()
         {
         }
 
@@ -44,7 +44,7 @@ namespace Intuit.TSheets.Client.Utilities
         /// <param name="eventId">
         /// The eventId value for associating a set of events.
         /// </param>
-        internal LogContext(int eventId)
+        public LogContext(int eventId)
         {
             EventId = eventId;
         }
@@ -53,13 +53,13 @@ namespace Intuit.TSheets.Client.Utilities
         /// Gets the event id value for this log context instance.
         /// </summary>
         [JsonProperty]
-        internal int EventId { get; }
+        public int EventId { get; }
 
         /// <summary>
         /// Gets the unique id value for this log context instance.
         /// </summary>
         [JsonProperty]
-        internal string CorrelationId { get; } = GetUniqueId();
+        public string CorrelationId { get; } = GetUniqueId();
 
         /// <summary>
         /// Get a short id value (unique to the application) for associating all 

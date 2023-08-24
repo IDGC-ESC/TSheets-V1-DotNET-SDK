@@ -34,62 +34,62 @@ namespace Intuit.TSheets.Model
         /// Gets the user id to which this payroll data pertains.
         /// </summary>
         [JsonProperty("user_id")]
-        public long UserId { get; internal set; }
+        public long UserId { get; set; }
 
         /// <summary>
         /// Gets the client id to which this payroll data pertains.
         /// </summary>
         [JsonProperty("client_id")]
-        public long ClientId { get; internal set; }
+        public long ClientId { get; set; }
 
         /// <summary> 
         /// Gets start of the reporting time frame.
         /// </summary>
         [JsonConverter(typeof(DateFormatConverter))]
         [JsonProperty("start_date")]
-        public DateTimeOffset? StartDate { get; internal set; }
+        public DateTimeOffset? StartDate { get; set; }
 
         /// <summary>
         /// Gets end of the reporting time frame.
         /// </summary>
         [JsonConverter(typeof(DateFormatConverter))]
         [JsonProperty("end_date")]
-        public DateTimeOffset? EndDate { get; internal set; }
+        public DateTimeOffset? EndDate { get; set; }
 
         /// <summary>
         /// Gets regular time, in seconds 
         /// </summary>
         [JsonProperty("total_re_seconds")]
-        public int? TotalReSeconds { get; internal set; }
+        public int? TotalReSeconds { get; set; }
 
         /// <summary>
         /// Gets total PTO time, in seconds 
         /// </summary>
         [JsonProperty("total_pto_seconds")]
-        public int? TotalPtoSeconds { get; internal set; }
+        public int? TotalPtoSeconds { get; set; }
 
         /// <summary>
         /// Gets total overall time, in seconds 
         /// </summary>
         [JsonProperty("total_work_seconds")]
-        public int? TotalWorkSeconds { get; internal set; }
+        public int? TotalWorkSeconds { get; set; }
 
         /// <summary>
         /// Gets breakdown of PTO time by PTO code.
         /// </summary>
         [JsonProperty("pto_seconds")]
-        public IReadOnlyDictionary<string, int> PtoSeconds { get; internal set; }
+        public IReadOnlyDictionary<string, int> PtoSeconds { get; set; }
 
         /// <summary>
         /// Gets the value which replaces total OT and total DT seconds.
         /// </summary>
         [JsonProperty("overtime_seconds")]
-        public IReadOnlyDictionary<string, int> OvertimeSeconds { get; internal set; }
+        public IReadOnlyDictionary<string, int> OvertimeSeconds { get; set; }
 
         /// <summary>
         /// Gets the value which replaces total OT and total DT seconds.
         /// </summary>
         [JsonProperty("fixed_rate_seconds")]
-        public IReadOnlyDictionary<string, int> FixedRateSeconds { get; internal set; }
+        public IReadOnlyDictionary<string, int> FixedRateSeconds { get; set; }
     }
 }

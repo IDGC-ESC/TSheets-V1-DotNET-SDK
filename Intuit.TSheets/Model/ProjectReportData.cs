@@ -31,12 +31,12 @@ namespace Intuit.TSheets.Model
         /// Gets the filter settings used to generate the report.
         /// </summary>
         [JsonProperty("filters")]
-        public ProjectReportFilters Filters { get; internal set; }
+        public ProjectReportFilters Filters { get; set; }
 
         /// <summary>
         /// Gets totals, indexed by unique user id.
         /// </summary>
         [JsonProperty("totals")]
-        public ProjectReportTotals Totals { get; internal set; }
+        public ProjectReportTotals Totals { get; set; }
     }
 }

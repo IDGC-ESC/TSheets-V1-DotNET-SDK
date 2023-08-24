@@ -37,6 +37,6 @@ namespace Intuit.TSheets.Model
         /// Totals are indexed by unique user id.
         /// </remarks>
         [JsonProperty("payroll_report")]
-        public IReadOnlyDictionary<string, PayrollReportItem> Report { get; internal set; }
+        public IReadOnlyDictionary<string, PayrollReportItem> Report { get; set; }
     }
 }

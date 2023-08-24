@@ -28,14 +28,14 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
     /// </summary>
     /// <typeparam name="T">The type of data entity.</typeparam>
     [JsonObject]
-    internal class CreateContext<T> : PipelineContext<T>, IWritableContext<T>
+    public class CreateContext<T> : PipelineContext<T>, IWritableContext<T>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateContext{T}"/> class.
         /// </summary>
         /// <param name="endpoint">The endpoint with which to interact.</param>
         /// <param name="items">The set of entity items to be created.</param>
-        internal CreateContext(EndpointName endpoint, IEnumerable<T> items)
+        public CreateContext(EndpointName endpoint, IEnumerable<T> items)
             : base(MethodType.Post, endpoint)
         {
             Items = items;

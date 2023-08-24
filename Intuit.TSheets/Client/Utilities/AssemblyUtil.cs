@@ -25,7 +25,7 @@ namespace Intuit.TSheets.Client.Utilities
     /// <summary>
     /// Helper class for retrieving information about the currently executing assembly.
     /// </summary>
-    internal static class AssemblyUtil
+    public static class AssemblyUtil
     {
         /// <summary>
         /// Returns the value specified in the AssemblyVersion attribute (in AssemblyInfo.cs)

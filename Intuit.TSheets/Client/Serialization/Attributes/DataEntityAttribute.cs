@@ -25,7 +25,7 @@ namespace Intuit.TSheets.Client.Serialization.Attributes
     /// A custom attribute used to identify API business objects (aka entities)
     /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
-    internal sealed class DataEntityAttribute : Attribute
+    public sealed class DataEntityAttribute : Attribute
     {
     }
 }

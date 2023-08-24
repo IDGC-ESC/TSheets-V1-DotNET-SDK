@@ -29,9 +29,9 @@ namespace Intuit.TSheets.Model.Exceptions
     public sealed class InternalServerException : ApiServerException
     {
         /// <summary>
-        /// The HTTP code for an internal server exception.
+        /// The HTTP code for an public server exception.
         /// </summary>
-        internal const int Code = 500;
+        public const int Code = 500;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InternalServerException"/> class.

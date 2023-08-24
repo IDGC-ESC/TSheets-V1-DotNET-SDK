@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for max items exceeded.
         /// </summary>
-        internal const int HttpCode = 413;
+        public const int HttpCode = 413;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MaxItemsExceededException"/> class.

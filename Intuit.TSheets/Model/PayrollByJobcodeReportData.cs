@@ -32,12 +32,12 @@ namespace Intuit.TSheets.Model
         /// Gets the overall totals for each jobcode contained in the report.
         /// </summary>
         [JsonProperty("totals")]
-        public IReadOnlyDictionary<string, PayrollByJobcodeReportItem> Totals { get; internal set; }
+        public IReadOnlyDictionary<string, PayrollByJobcodeReportItem> Totals { get; set; }
 
         /// <summary>
         /// Gets the overall and by-date totals for each user.
         /// </summary>
         [JsonProperty("by_user")]
-        public IReadOnlyDictionary<string, PayrollByJobcodeByUser> ByUser { get; internal set; }
+        public IReadOnlyDictionary<string, PayrollByJobcodeByUser> ByUser { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that validates input data for a "delete" operation.
     /// </summary>
-    internal class DeleteContextValidator : PipelineElement<DeleteContextValidator>
+    public class DeleteContextValidator : PipelineElement<DeleteContextValidator>
     {
         private DeleteContextValidator()
         {

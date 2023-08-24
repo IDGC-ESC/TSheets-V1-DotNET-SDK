@@ -32,18 +32,18 @@ namespace Intuit.TSheets.Model
         ///  Gets the user id to which this report data pertains.
         /// </summary>
         [JsonProperty("user_id")]
-        public long UserId { get; internal set; }
+        public long UserId { get; set; }
 
         /// <summary>
         /// Gets the Payroll By Jobcode Totals for this User
         /// </summary>
         [JsonProperty("totals")]
-        public IReadOnlyDictionary<string, PayrollByJobcodeReportItem> Totals { get; internal set; }
+        public IReadOnlyDictionary<string, PayrollByJobcodeReportItem> Totals { get; set; }
         
         /// <summary>
         /// Gets the Payroll By Jobcode By Date Totals for this User
         /// </summary>
         [JsonProperty("dates")]
-        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, PayrollByJobcodeReportItem>> Dates { get; internal set; }
+        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, PayrollByJobcodeReportItem>> Dates { get; set; }
     }
 }

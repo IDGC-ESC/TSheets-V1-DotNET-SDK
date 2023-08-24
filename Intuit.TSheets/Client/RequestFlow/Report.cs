@@ -22,16 +22,16 @@ namespace Intuit.TSheets.Client.RequestFlow
     using Newtonsoft.Json;
 
     /// <summary>
-    /// An internal class for deserializing report results
+    /// An public class for deserializing report results
     /// </summary>
     /// <typeparam name="T">The type of report entity</typeparam>
     [JsonObject]
-    internal class Report<T>
+    public class Report<T>
     {
         /// <summary>
         /// Gets or sets the report results data
         /// </summary>
         [JsonProperty("results")]
-        internal T Results { get; set; }
+        public T Results { get; set; }
     }
 }

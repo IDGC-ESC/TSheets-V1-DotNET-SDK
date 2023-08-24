@@ -14,29 +14,29 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         [JsonProperty("time_off_request_id")]
-        public long RequestID { get; internal set; }
+        public long RequestID { get; set; }
 
         /// <summary>
         /// Gets or sets the id for the user that this timesheet belongs to.
         /// </summary>
         [JsonProperty("user_id")]
-        public long UserID { get; internal set; }
+        public long UserID { get; set; }
 
         [JsonProperty("active")]
-        public bool Active { get; internal set; }
+        public bool Active { get; set; }
 
         [JsonProperty("note")]
         public string Note { get; set; }
 
         [JsonConverter(typeof(DateTimeFormatConverter))]
         [JsonProperty("created")]
-        public DateTimeOffset Created { get; internal set; }
+        public DateTimeOffset Created { get; set; }
 
         [JsonConverter(typeof(DateTimeFormatConverter))]
         [JsonProperty("last_modified")]
-        public DateTimeOffset LastModified { get; internal set; }
+        public DateTimeOffset LastModified { get; set; }
     }
 }

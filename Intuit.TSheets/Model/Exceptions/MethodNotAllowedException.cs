@@ -32,7 +32,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for method not allowed.
         /// </summary>
-        internal const int HttpCode = 405;
+        public const int HttpCode = 405;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MethodNotAllowedException"/> class.

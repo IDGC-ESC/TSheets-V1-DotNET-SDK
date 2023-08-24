@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for a conflict.
         /// </summary>
-        internal const int HttpCode = 409;
+        public const int HttpCode = 409;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ConflictException"/> class.

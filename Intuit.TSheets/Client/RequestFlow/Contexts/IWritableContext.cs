@@ -25,7 +25,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
     /// Interface for pipeline context classes which write data to the API (i.e. create/update)
     /// </summary>
     /// <typeparam name="T">The type of data entity.</typeparam>
-    internal interface IWritableContext<T> : ISerializedRequest
+    public interface IWritableContext<T> : ISerializedRequest
     {
         /// <summary>
         /// Gets or sets the set of data entity items to be created or updated.

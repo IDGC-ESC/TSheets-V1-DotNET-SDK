@@ -28,13 +28,13 @@ namespace Intuit.TSheets.Client.RequestFlow
     /// </summary>
     /// <typeparam name="T">The type of data entity</typeparam>
     [JsonObject]
-    internal class Request<T>
+    public class Request<T>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Request{T}"/> class.
         /// </summary>
         /// <param name="entities">The entities to be serialized.</param>
-        internal Request(IEnumerable<T> entities)
+        public Request(IEnumerable<T> entities)
         {
             Data = entities != null
                 ? entities.ToArray()

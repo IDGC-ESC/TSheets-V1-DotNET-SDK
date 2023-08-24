@@ -35,78 +35,78 @@ namespace Intuit.TSheets.Model
         /// Gets the last modified timestamp for the CurrentUser endpoint
         /// </summary>
         [JsonProperty("current_user")]
-        public DateTimeOffset? CurrentUser { get; internal set; }
+        public DateTimeOffset? CurrentUser { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the CustomFields endpoint
         /// </summary>
         [JsonProperty("customfields")]
-        public DateTimeOffset? CustomFields { get; internal set; }
+        public DateTimeOffset? CustomFields { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the CustomFieldItems endpoint
         /// </summary>
         [JsonProperty("customfielditems")]
-        public DateTimeOffset? CustomFieldItems { get; internal set; }
+        public DateTimeOffset? CustomFieldItems { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the EffectiveSettings endpoint
         /// </summary>
         [JsonProperty("effective_settings")]
-        public DateTimeOffset? EffectiveSettings { get; internal set; }
+        public DateTimeOffset? EffectiveSettings { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the Geolocations endpoint
         /// </summary>
         [JsonProperty("geolocations")]
-        public DateTimeOffset? Geolocations { get; internal set; }
+        public DateTimeOffset? Geolocations { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the Jobcodes endpoint
         /// </summary>
         [JsonProperty("jobcodes")]
-        public DateTimeOffset? Jobcodes { get; internal set; }
+        public DateTimeOffset? Jobcodes { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the JobcodeAssignments endpoint
         /// </summary>
         [JsonProperty("jobcode_assignments")]
-        public DateTimeOffset? JobcodeAssignments { get; internal set; }
+        public DateTimeOffset? JobcodeAssignments { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the Timesheets endpoint
         /// </summary>
         [JsonProperty("timesheets")]
-        public DateTimeOffset? Timesheets { get; internal set; }
+        public DateTimeOffset? Timesheets { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the TimesheetDeleted endpoint
         /// </summary>
         [JsonProperty("timesheets_deleted")]
-        public DateTimeOffset? TimesheetDeleted { get; internal set; }
+        public DateTimeOffset? TimesheetDeleted { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the Users endpoint
         /// </summary>
         [JsonProperty("users")]
-        public DateTimeOffset? Users { get; internal set; }
+        public DateTimeOffset? Users { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the Reminders endpoint
         /// </summary>
         [JsonProperty("reminders")]
-        public DateTimeOffset? Reminders { get; internal set; }
+        public DateTimeOffset? Reminders { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the Locations endpoint
         /// </summary>
         [JsonProperty("locations")]
-        public DateTimeOffset? Locations { get; internal set; }
+        public DateTimeOffset? Locations { get; set; }
 
         /// <summary>
         /// Gets the last modified timestamp for the GeofenceConfigs endpoint
         /// </summary>
         [JsonProperty("geofence_configs")]
-        public DateTimeOffset? GeofenceConfigs { get; internal set; }
+        public DateTimeOffset? GeofenceConfigs { get; set; }
     }
 }

@@ -7433,7 +7433,7 @@
         </member>
         <member name="T:Intuit.TSheets.Client.Extensions.DictionaryExtensions">
             <summary>
-            For internal use, extension methods for Dictionary&lt;string, string&gt; objects.
+            For public use, extension methods for Dictionary&lt;string, string&gt; objects.
             </summary>
         </member>
         <member name="M:Intuit.TSheets.Client.Extensions.DictionaryExtensions.ToUrlQueryString(System.Collections.Generic.Dictionary{System.String,System.String})">
@@ -7445,7 +7445,7 @@
         </member>
         <member name="T:Intuit.TSheets.Client.Extensions.EnumerableExtensions">
             <summary>
-            For internal use, extension methods for IEnumerable&lt;T&gt; objects.
+            For public use, extension methods for IEnumerable&lt;T&gt; objects.
             </summary>
         </member>
         <member name="M:Intuit.TSheets.Client.Extensions.EnumerableExtensions.MakeBatchesOfSize``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
@@ -7459,7 +7459,7 @@
         </member>
         <member name="T:Intuit.TSheets.Client.Extensions.FilterExtensions">
             <summary>
-            For internal use, extension methods for IEntityFilter objects.
+            For public use, extension methods for IEntityFilter objects.
             </summary>
         </member>
         <member name="M:Intuit.TSheets.Client.Extensions.FilterExtensions.GetFiltersWithOptions(Intuit.TSheets.Model.Filters.IEntityFilter,Intuit.TSheets.Api.RequestOptions)">
@@ -7477,7 +7477,7 @@
         </member>
         <member name="T:Intuit.TSheets.Client.Extensions.NullableBoolExtensions">
             <summary>
-            For internal use, extension methods for bool?.
+            For public use, extension methods for bool?.
             </summary>
         </member>
         <member name="M:Intuit.TSheets.Client.Extensions.NullableBoolExtensions.IsTrue(System.Nullable{System.Boolean})">
@@ -7496,7 +7496,7 @@
         </member>
         <member name="T:Intuit.TSheets.Client.Extensions.ObjectExtensions">
             <summary>
-            For internal use, extension methods for object.
+            For public use, extension methods for object.
             </summary>
         </member>
         <member name="M:Intuit.TSheets.Client.Extensions.ObjectExtensions.ThrowIfNull(System.Object)">
@@ -7507,7 +7507,7 @@
         </member>
         <member name="T:Intuit.TSheets.Client.Extensions.PipelineContextExtensions">
             <summary>
-            For internal use, extension methods for PipelineContext&lt;T&gt; object.
+            For public use, extension methods for PipelineContext&lt;T&gt; object.
             </summary>
         </member>
         <member name="M:Intuit.TSheets.Client.Extensions.PipelineContextExtensions.JsonPath``1(Intuit.TSheets.Client.RequestFlow.Contexts.PipelineContext{``0})">
@@ -8267,7 +8267,7 @@
         </member>
         <member name="T:Intuit.TSheets.Client.RequestFlow.Report`1">
             <summary>
-            An internal class for deserializing report results
+            An public class for deserializing report results
             </summary>
             <typeparam name="T">The type of report entity</typeparam>
         </member>
@@ -10229,7 +10229,7 @@
         </member>
         <member name="F:Intuit.TSheets.Model.Exceptions.InternalServerException.Code">
             <summary>
-            The HTTP code for an internal server exception.
+            The HTTP code for an public server exception.
             </summary>
         </member>
         <member name="M:Intuit.TSheets.Model.Exceptions.InternalServerException.#ctor(System.String,System.String,System.Exception)">
@@ -10898,7 +10898,7 @@
         </member>
         <member name="T:Intuit.TSheets.Model.Filters.FileDownloadFilter">
             <summary>
-            For internal use, converts an id into a filter for selecting the specific <see cref="T:Intuit.TSheets.Model.File"/> to retrieve.
+            For public use, converts an id into a filter for selecting the specific <see cref="T:Intuit.TSheets.Model.File"/> to retrieve.
             </summary>
         </member>
         <member name="M:Intuit.TSheets.Model.Filters.FileDownloadFilter.#ctor(System.Int32)">

@@ -33,7 +33,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that deserializes the response from a "create" or "update" operation.
     /// </summary>
-    internal class ModificationResultsDeserializer : PipelineElement<ModificationResultsDeserializer>
+    public class ModificationResultsDeserializer : PipelineElement<ModificationResultsDeserializer>
     {
         private ModificationResultsDeserializer()
         {

@@ -32,7 +32,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that deserializes the response from a "delete" operation.
     /// </summary>
-    internal class DeleteResultsDeserializer : PipelineElement<DeleteResultsDeserializer>
+    public class DeleteResultsDeserializer : PipelineElement<DeleteResultsDeserializer>
     {
         private DeleteResultsDeserializer()
         {

@@ -35,7 +35,7 @@ namespace Intuit.TSheets.Api
         /// <param name="index">The index number of the item in the input batch to which the error applies.</param>
         /// <param name="item">The entity item to which the error applies.</param>
         /// <param name="status">The <see cref="Status"/> object, containing error information.</param>
-        internal ErrorItem(int index, T item, Status status)
+        public ErrorItem(int index, T item, Status status)
             : this(index, status)
         {
             Item = item;
@@ -46,7 +46,7 @@ namespace Intuit.TSheets.Api
         /// </summary>
         /// <param name="index">The index number of the item in the input batch to which the error applies.</param>
         /// <param name="status">The <see cref="Status"/> object, containing error information.</param>
-        internal ErrorItem(int index, Status status)
+        public ErrorItem(int index, Status status)
         {
             Index = index;
             Id = status.Id;
@@ -59,7 +59,7 @@ namespace Intuit.TSheets.Api
         /// Gets the index number of the item in the input batch to which the error applies.
         /// </summary>
         [JsonProperty]
-        public int Index { get; internal set; }
+        public int Index { get; set; }
 
         /// <summary>
         /// Gets the entity item to which the error applies.

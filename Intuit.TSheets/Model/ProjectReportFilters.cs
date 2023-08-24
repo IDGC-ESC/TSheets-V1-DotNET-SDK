@@ -41,7 +41,7 @@ namespace Intuit.TSheets.Model
         /// Only time for these users will be included.
         /// </remarks>
         [JsonProperty("user_ids")]
-        public IReadOnlyList<string> UserIds { get; internal set; }
+        public IReadOnlyList<string> UserIds { get; set; }
 
         /// <summary>
         /// Gets filter for the ids for <see cref="Group"/> objects to be included in the report.
@@ -50,7 +50,7 @@ namespace Intuit.TSheets.Model
         /// Only time for these groups will be included.
         /// </remarks>
         [JsonProperty("group_ids")]
-        public IReadOnlyList<long> GroupIds { get; internal set; }
+        public IReadOnlyList<long> GroupIds { get; set; }
 
         /// <summary>
         /// Gets filter for the start date for the report.
@@ -60,7 +60,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [JsonConverter(typeof(DateFormatConverter))]
         [JsonProperty("start_date")]
-        public DateTimeOffset? StartDate { get; internal set; }
+        public DateTimeOffset? StartDate { get; set; }
 
         /// <summary>
         /// Gets filter for the end date for the report.
@@ -70,7 +70,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [JsonConverter(typeof(DateFormatConverter))]
         [JsonProperty("end_date")]
-        public DateTimeOffset? EndDate { get; internal set; }
+        public DateTimeOffset? EndDate { get; set; }
 
         /// <summary>
         /// Gets filter for the ids for <see cref="Jobcode"/> objects to be included in the report.
@@ -81,14 +81,14 @@ namespace Intuit.TSheets.Model
         [JsonConverter(typeof(EnumerableToCsvConverter))]
         [JsonSchema(JsonObjectType.String)]
         [JsonProperty("jobcode_ids")]
-        public IReadOnlyList<long> JobcodeIds { get; internal set; }
+        public IReadOnlyList<long> JobcodeIds { get; set; }
 
         /// <summary>
         /// Gets filters for the <see cref="CustomFieldItems"/> objects to be included in the report.
         /// </summary>
         [JsonConverter(typeof(EmptyArrayObjectConverter))]
         [JsonProperty("customfielditems")]
-        public IReadOnlyDictionary<string, IReadOnlyList<string>> CustomFieldItems { get; internal set; }
+        public IReadOnlyDictionary<string, IReadOnlyList<string>> CustomFieldItems { get; set; }
 
         /// <summary>
         /// Gets filters for the types of <see cref="Jobcode"/> objects to be included in the report.
@@ -99,6 +99,6 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("jobcode_type")]
-        public JobcodeType? JobcodeType { get; internal set; }
+        public JobcodeType? JobcodeType { get; set; }
     }
 }

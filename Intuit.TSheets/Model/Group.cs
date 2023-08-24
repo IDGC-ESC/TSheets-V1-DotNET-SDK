@@ -56,7 +56,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate] 
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the value indicating whether this group is active or archived.
@@ -81,13 +81,13 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [JsonProperty("created")]
         [NoSerializeOnWrite]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
 
         /// <summary>
         /// Gets the date/time when this group was last modified.
         /// </summary>
         [JsonProperty("last_modified")]
         [NoSerializeOnWrite]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
     }
 }

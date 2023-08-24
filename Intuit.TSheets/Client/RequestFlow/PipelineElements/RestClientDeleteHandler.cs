@@ -28,7 +28,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that invokes the http rest client to perform a "delete" operation.
     /// </summary>
-    internal class RestClientDeleteHandler : PipelineElement<RestClientDeleteHandler>
+    public class RestClientDeleteHandler : PipelineElement<RestClientDeleteHandler>
     {
         private RestClientDeleteHandler()
         {

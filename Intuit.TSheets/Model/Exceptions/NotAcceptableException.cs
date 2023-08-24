@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for not acceptable.
         /// </summary>
-        internal const int HttpCode = 406;
+        public const int HttpCode = 406;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NotAcceptableException"/> class.

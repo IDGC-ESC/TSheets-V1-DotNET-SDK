@@ -78,7 +78,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the first line of the location's address.
@@ -126,7 +126,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [NoSerializeOnWrite]
         [JsonProperty("formatted_address")]
-        public string FormattedAddress { get; internal set; }
+        public string FormattedAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the status of the location.
@@ -154,7 +154,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("place_id_hash")]
-        public string PlaceIdHash { get; internal set; }
+        public string PlaceIdHash { get; set; }
 
         /// <summary>
         /// Gets the formatted name for the location.
@@ -165,7 +165,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [NoSerializeOnWrite]
         [JsonProperty("label")]
-        public string Label { get; internal set; }
+        public string Label { get; set; }
 
         /// <summary>
         /// Gets or sets the notes related to the location.
@@ -182,21 +182,21 @@ namespace Intuit.TSheets.Model
         [JsonConverter(typeof(StringEnumConverter))]
         [NoSerializeOnWrite]
         [JsonProperty("geocoding_status")]
-        public GeocodingStatus? GeocodingStatus { get; internal set; }
+        public GeocodingStatus? GeocodingStatus { get; set; }
 
         /// <summary>
         /// Gets the date/time when this location was last modified.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the date/time when this location was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
 
         /// <summary>
         /// Gets or sets the key/value map of all the objects linked to this location and the corresponding object ids.
@@ -209,6 +209,6 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("geofence_config_id")]
-        public long? GeofenceConfigId { get; internal set; }
+        public long? GeofenceConfigId { get; set; }
     }
 }

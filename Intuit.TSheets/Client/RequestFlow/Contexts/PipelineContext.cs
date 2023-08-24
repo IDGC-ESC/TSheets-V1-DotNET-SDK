@@ -34,14 +34,14 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
     /// </remarks>
     /// <typeparam name="T">The type of data entity.</typeparam>
     [JsonObject]
-    internal abstract class PipelineContext<T>
+    public abstract class PipelineContext<T>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PipelineContext{T}"/> class.
         /// </summary>
         /// <param name="methodType">The type of API operation to be performed, <see cref="MethodType"/></param>
         /// <param name="endpointName">The name of the endpoint with which to interact.</param>
-        internal PipelineContext(MethodType methodType, EndpointName endpointName)
+        public PipelineContext(MethodType methodType, EndpointName endpointName)
         {
             MethodType = methodType;
             Endpoint = endpointName;

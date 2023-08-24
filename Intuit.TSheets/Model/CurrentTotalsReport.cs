@@ -35,6 +35,6 @@ namespace Intuit.TSheets.Model
         /// Gets the list of per-user Reports.
         /// </summary>
         [JsonProperty("current_totals")]
-        public IReadOnlyDictionary<string, CurrentTotalsReportItem> CurrentTotals { get; internal set; }
+        public IReadOnlyDictionary<string, CurrentTotalsReportItem> CurrentTotals { get; set; }
     }
 }

@@ -28,14 +28,14 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
     /// </summary>
     /// <typeparam name="T">The type of report.</typeparam>
     [JsonObject]
-    internal class GetReportContext<T> : PipelineContext<T>, ISerializedRequest
+    public class GetReportContext<T> : PipelineContext<T>, ISerializedRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetReportContext{T}"/> class.
         /// </summary>
         /// <param name="endpoint">The endpoint with which to interact.</param>
         /// <param name="filter">The filter for tuning the report results.</param>
-        internal GetReportContext(EndpointName endpoint, EntityFilter filter)
+        public GetReportContext(EndpointName endpoint, EntityFilter filter)
             : base(MethodType.Post, endpoint)
         {
             Filter = filter ?? new NullFilter();
@@ -51,12 +51,12 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
         /// Gets or sets the instance of <see cref="IEntityFilter"/>, for tuning the report results.
         /// </summary>
         [JsonProperty]
-        internal IEntityFilter Filter { get; set; }
+        public IEntityFilter Filter { get; set; }
 
         /// <summary>
         /// Gets or sets the report to be returned.
         /// </summary>
         [JsonProperty]
-        internal new T Results { get; set; }
+        public new T Results { get; set; }
     }
 }

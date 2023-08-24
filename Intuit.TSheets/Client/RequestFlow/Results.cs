@@ -28,18 +28,18 @@ namespace Intuit.TSheets.Client.RequestFlow
     /// </summary>
     /// <typeparam name="T">The type of data entity.</typeparam>
     [JsonObject]
-    internal class Results<T>
+    public class Results<T>
     {
         /// <summary>
         /// Gets or sets the list of items that succeeded
         /// </summary>
         [JsonProperty]
-        internal List<T> Items { get; set; } = new List<T>();
+        public List<T> Items { get; set; } = new List<T>();
 
         /// <summary>
         /// Gets or sets the list of items that failed
         /// </summary>
         [JsonProperty]
-        internal List<ErrorItem<T>> ErrorItems { get; set; } = new List<ErrorItem<T>>();
+        public List<ErrorItem<T>> ErrorItems { get; set; } = new List<ErrorItem<T>>();
     }
 }

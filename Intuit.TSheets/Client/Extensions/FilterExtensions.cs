@@ -25,9 +25,9 @@ namespace Intuit.TSheets.Client.Extensions
     using Intuit.TSheets.Model.Filters;
 
     /// <summary>
-    /// For internal use, extension methods for IEntityFilter objects.
+    /// For public use, extension methods for IEntityFilter objects.
     /// </summary>
-    internal static class FilterExtensions
+    public static class FilterExtensions
     {
         /// <summary>
         /// Returns a dictionary of key/value pairs for which request options
@@ -40,7 +40,7 @@ namespace Intuit.TSheets.Client.Extensions
         /// A <see cref="RequestOptions"/> object for controlling the behavior of API calls.
         /// </param>
         /// <returns>The dictionary of concatenated key-value pairs.</returns>
-        internal static Dictionary<string, string> GetFiltersWithOptions(
+        public static Dictionary<string, string> GetFiltersWithOptions(
             this IEntityFilter filter,
             RequestOptions options)
         {

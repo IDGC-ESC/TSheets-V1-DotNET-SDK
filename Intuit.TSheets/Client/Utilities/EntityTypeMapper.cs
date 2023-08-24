@@ -27,7 +27,7 @@ namespace Intuit.TSheets.Client.Utilities
     /// Internal helper class for mapping the entity name (as found in the JSON response of TSheets API method calls)
     /// to a function which creates a new instance of the corresponding entity type.
     /// </summary>
-    internal static class EntityTypeMapper
+    public static class EntityTypeMapper
     {
         private static Dictionary<string, Func<IIdentifiable>> typeCreators = new Dictionary<string, Func<IIdentifiable>>
         {
@@ -56,7 +56,7 @@ namespace Intuit.TSheets.Client.Utilities
         /// A function which creates a new instance of the entity type
         /// if the type is known, else null.
         /// </returns>
-        internal static Func<IIdentifiable> GetTypeCreator(string entityName)
+        public static Func<IIdentifiable> GetTypeCreator(string entityName)
         {
             return typeCreators.ContainsKey(entityName)
                 ? typeCreators[entityName]

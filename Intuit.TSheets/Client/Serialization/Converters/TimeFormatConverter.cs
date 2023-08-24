@@ -29,7 +29,7 @@ namespace Intuit.TSheets.Client.Serialization.Converters
         /// <summary>
         /// The format for representing the time-only portion of a date/time value.
         /// </summary>
-        internal const string TimeOnly = "HH:mm:ss";
+        public const string TimeOnly = "HH:mm:ss";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TimeFormatConverter"/> class.

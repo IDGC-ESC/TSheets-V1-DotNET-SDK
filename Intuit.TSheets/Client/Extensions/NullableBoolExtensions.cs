@@ -20,16 +20,16 @@
 namespace Intuit.TSheets.Client.Extensions
 {
     /// <summary>
-    /// For internal use, extension methods for bool?.
+    /// For public use, extension methods for bool?.
     /// </summary>
-    internal static class NullableBoolExtensions
+    public static class NullableBoolExtensions
     {
         /// <summary>
         /// Returns true if has a value, and the value is true.
         /// </summary>
         /// <param name="input">The value to interpret.</param>
         /// <returns>True or false</returns>
-        internal static bool IsTrue(this bool? input)
+        public static bool IsTrue(this bool? input)
         {
             return input.HasValue && input.Value;
         }
@@ -39,7 +39,7 @@ namespace Intuit.TSheets.Client.Extensions
         /// </summary>
         /// <param name="input">The value to interpret.</param>
         /// <returns>True or false</returns>
-        internal static bool IsTrueOrNull(this bool? input)
+        public static bool IsTrueOrNull(this bool? input)
         {
             return !input.HasValue || input.Value;
         }

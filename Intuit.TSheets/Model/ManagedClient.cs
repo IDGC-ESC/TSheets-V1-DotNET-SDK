@@ -35,7 +35,7 @@ namespace Intuit.TSheets.Model
         /// Gets the id of the managed client.
         /// </summary>
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets the sub-domain portion of the company URL used by the managed client to sign in to TSheets.
@@ -44,32 +44,32 @@ namespace Intuit.TSheets.Model
         /// Also known as 'Company URL'.
         /// </remarks>
         [JsonProperty("company_url")]
-        public string CompanySubDomain { get; internal set; }
+        public string CompanySubDomain { get; set; }
 
         /// <summary>
         /// Gets the name of the managed client's company.
         /// </summary>
         [JsonProperty("company_name")]
-        public string CompanyName { get; internal set; }
+        public string CompanyName { get; set; }
 
         /// <summary>
         /// Gets the value indicating whether the client is active or archived.
         /// </summary>
         [JsonProperty("active")]
-        public bool? Active { get; internal set; }
+        public bool? Active { get; set; }
 
         /// <summary>
         /// Gets the date/time when this managed client record was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
 
         /// <summary>
         /// Gets the date/time when this managed client record was last modified.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
     }
 }

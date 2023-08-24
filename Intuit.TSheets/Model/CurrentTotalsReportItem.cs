@@ -32,48 +32,48 @@ namespace Intuit.TSheets.Model
         ///  Gets the user id to which these totals pertain.
         /// </summary>
         [JsonProperty("user_id")]
-        public long UserId { get; internal set; }
+        public long UserId { get; set; }
 
         /// <summary>
         /// Gets the value indicating whether this user is on or off the clock.
         /// </summary>
         [JsonProperty("on_the_clock")]
-        public bool? OnTheClock { get; internal set; }
+        public bool? OnTheClock { get; set; }
 
         /// <summary>
         /// Gets the timesheet id for the current timesheet.
         /// </summary>
         [JsonProperty("timesheet_id")]
-        public long? TimesheetId { get; internal set; }
+        public long? TimesheetId { get; set; }
 
         /// <summary>
         /// Gets the jobcode id for the current timesheet.
         /// </summary>
         [JsonProperty("jobcode_id")]
-        public long? JobcodeId { get; internal set; }
+        public long? JobcodeId { get; set; }
 
         /// <summary>
         /// Gets the unique group id for this user (value of zero represents those without a group).
         /// </summary>
         [JsonProperty("group_id")]
-        public long? GroupId { get; internal set; }
+        public long? GroupId { get; set; }
 
         /// <summary>
         /// Gets the value indicating whether geolocations are available for the current timesheet.
         /// </summary>
         [JsonProperty("shift_geolocations_available")]
-        public bool? ShiftGeolocationsAvailable { get; internal set; }
+        public bool? ShiftGeolocationsAvailable { get; set; }
 
         /// <summary>
         /// Gets the total time for the current shift, in seconds. 
         /// </summary>
         [JsonProperty("shift_seconds")]
-        public int? ShiftSeconds { get; internal set; }
+        public int? ShiftSeconds { get; set; }
 
         /// <summary>
         /// Gets the total time for the current day, in seconds. 
         /// </summary>
         [JsonProperty("day_seconds")]
-        public int? DaySeconds { get; internal set; }
+        public int? DaySeconds { get; set; }
     }
 }

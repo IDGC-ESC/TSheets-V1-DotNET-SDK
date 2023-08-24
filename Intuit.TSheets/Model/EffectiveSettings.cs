@@ -37,6 +37,6 @@ namespace Intuit.TSheets.Model
         /// Gets the set of sections, along with the setting values for each
         /// </summary>
         [JsonProperty("effective_settings")]
-        public IReadOnlyDictionary<string, EffectiveSettingsSection> Sections { get; internal set; }
+        public IReadOnlyDictionary<string, EffectiveSettingsSection> Sections { get; set; }
     }
 }

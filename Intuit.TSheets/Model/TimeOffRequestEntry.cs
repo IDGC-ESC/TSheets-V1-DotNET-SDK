@@ -12,7 +12,7 @@ namespace Intuit.TSheets.Model
     public class TimeOffRequestEntry : IIdentifiable
     {
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         [JsonProperty("time_off_request_id")]
         public long TimeOffRequestId { get; set; }
@@ -22,7 +22,7 @@ namespace Intuit.TSheets.Model
         public TimeOffRequestStatus Status { get; set; }
 
         [JsonProperty("approver_user_id")]
-        public long ApproverUserId { get; internal set; }
+        public long ApproverUserId { get; set; }
 
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("entry_method")]
@@ -32,7 +32,7 @@ namespace Intuit.TSheets.Model
         public long Duration { get; set; }
 
         [JsonProperty("tz_string")]
-        public string TimeZoneString { get; internal set; }
+        public string TimeZoneString { get; set; }
 
         [JsonProperty("jobcode_id")]
         public long JobcodeId { get; set; }
@@ -41,18 +41,18 @@ namespace Intuit.TSheets.Model
         public long UserId { get; set; }
 
         [JsonProperty("approved_timesheet_id")]
-        public long ApprovedTimesheetId { get; internal set; }
+        public long ApprovedTimesheetId { get; set; }
 
         [JsonProperty("active")]
-        public bool Active { get; internal set; }
+        public bool Active { get; set; }
 
         [JsonConverter(typeof(DateTimeFormatConverter))]
         [JsonProperty("created")]
-        public DateTimeOffset Created { get; internal set; }
+        public DateTimeOffset Created { get; set; }
 
         [JsonConverter(typeof(DateTimeFormatConverter))]
         [JsonProperty("last_modified")]
-        public DateTimeOffset LastModified { get; internal set; }
+        public DateTimeOffset LastModified { get; set; }
 
         [JsonConverter(typeof(DateFormatConverter))]
         [JsonProperty("date")]

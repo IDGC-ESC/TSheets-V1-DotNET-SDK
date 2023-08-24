@@ -58,7 +58,7 @@ namespace Intuit.TSheets.Api
         /// For exponential back-off, the power to which the retry iteration will be raised. 
         /// </param>
         /// <param name="multiplier">
-        /// Value to multiply for linear scaling of the time between retries.
+        /// Results to multiply for linear scaling of the time between retries.
         /// </param>
         /// <param name="retryTypes">
         /// The Exception types to retry when encountered.
@@ -74,7 +74,7 @@ namespace Intuit.TSheets.Api
         /// <summary>
         /// Initializes a new instance of the <see cref="RetrySettings"/> class.
         /// </summary>
-        internal RetrySettings()
+        public RetrySettings()
             : this(DefaultMaxRetryCount, DefaultExponent, DefaultMultiplier, RetryServiceUnavailable)
         {
         }

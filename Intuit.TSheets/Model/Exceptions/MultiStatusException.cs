@@ -35,12 +35,12 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for a multi-status condition.
         /// </summary>
-        internal const int Code = 207;
+        public const int Code = 207;
 
         /// <summary>
         /// The error text for a multi-status condition.
         /// </summary>
-        internal const string ErrorTextValue = "Multi-Status";
+        public const string ErrorTextValue = "Multi-Status";
 
         private readonly Results<T> results;
 
@@ -53,7 +53,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// An instance of <see cref="Results{T}"/>, contains separate lists of entities
         /// for which the create or update operation succeeded and/or failed.
         /// </param>
-        internal MultiStatusException(string message, Exception innerException, Results<T> results)
+        public MultiStatusException(string message, Exception innerException, Results<T> results)
             : base(Code, ErrorTextValue, message, innerException)
         {
             this.results = results;

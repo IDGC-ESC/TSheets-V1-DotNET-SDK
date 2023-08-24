@@ -22,7 +22,7 @@ namespace Intuit.TSheets.Client.Core
     /// <summary>
     /// Supported HTTP method types
     /// </summary>
-    internal enum MethodType
+    public enum MethodType
     {
         Get = 1,
         Post,

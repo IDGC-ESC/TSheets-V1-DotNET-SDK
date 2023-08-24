@@ -27,7 +27,7 @@ namespace Intuit.TSheets.Client.RequestFlow
     /// Class that is serialized to JSON for requesting the retrieval of a report.
     /// </summary>
     [JsonObject]
-    internal class ReportRequest
+    public class ReportRequest
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportRequest"/> class.
@@ -35,7 +35,7 @@ namespace Intuit.TSheets.Client.RequestFlow
         /// <param name="filter">
         /// An instance of an <see cref="IEntityFilter"/>, for tuning the report results.
         /// </param>
-        internal ReportRequest(IEntityFilter filter)
+        public ReportRequest(IEntityFilter filter)
         {
             Data = filter?.GetFilters();
         }
@@ -44,6 +44,6 @@ namespace Intuit.TSheets.Client.RequestFlow
         /// Gets or sets the key/value pairs which represent the report request.
         /// </summary>
         [JsonProperty("data")]
-        internal Dictionary<string, string> Data { get; set; }
+        public Dictionary<string, string> Data { get; set; }
     }
 }

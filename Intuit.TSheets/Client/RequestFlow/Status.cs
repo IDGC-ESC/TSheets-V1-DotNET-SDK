@@ -26,7 +26,7 @@ namespace Intuit.TSheets.Client.RequestFlow
     /// for each entity in the batch is deserialized.
     /// </summary>
     [JsonObject]
-    internal class Status
+    public class Status
     {
         /// <summary>
         /// Gets or sets the entity's identifier
@@ -61,6 +61,6 @@ namespace Intuit.TSheets.Client.RequestFlow
         /// <summary>
         /// Gets the value indicating whether a code represents success
         /// </summary>
-        internal bool IsSuccess => this.Code < 300;
+        public bool IsSuccess => this.Code < 300;
     }
 }

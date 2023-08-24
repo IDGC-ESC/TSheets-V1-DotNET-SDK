@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for billing not current.
         /// </summary>
-        internal const int HttpCode = 402;
+        public const int HttpCode = 402;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BillingNotCurrentException"/> class.

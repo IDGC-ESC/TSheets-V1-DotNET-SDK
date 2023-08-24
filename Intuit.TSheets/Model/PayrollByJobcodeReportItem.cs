@@ -32,48 +32,48 @@ namespace Intuit.TSheets.Model
         ///  Gets the jobcode id to which this data pertains.
         /// </summary>
         [JsonProperty("jobcode_id")]
-        public long JobcodeId { get; internal set; }
+        public long JobcodeId { get; set; }
 
         /// <summary>
         /// Gets regular time, in seconds 
         /// </summary>
         [JsonProperty("total_re_seconds")]
-        public int? TotalReSeconds { get; internal set; }
+        public int? TotalReSeconds { get; set; }
 
         /// <summary>
         /// Gets overtime time, in seconds 
         /// </summary>
         [JsonProperty("total_ot_seconds")]
-        public int? TotalOtSeconds { get; internal set; }
+        public int? TotalOtSeconds { get; set; }
 
         /// <summary>
         /// Gets double time, in seconds 
         /// </summary>
         [JsonProperty("total_dt_seconds")]
-        public int? TotalDtSeconds { get; internal set; }
+        public int? TotalDtSeconds { get; set; }
 
         /// <summary>
         /// Gets total PTO time, in seconds 
         /// </summary>
         [JsonProperty("total_pto_seconds")]
-        public int? TotalPtoSeconds { get; internal set; }
+        public int? TotalPtoSeconds { get; set; }
 
         /// <summary>
         /// Gets total overall time, in seconds 
         /// </summary>
         [JsonProperty("total_work_seconds")]
-        public int? TotalWorkSeconds { get; internal set; }
+        public int? TotalWorkSeconds { get; set; }
 
         /// <summary>
         /// Gets the value which replaces total OT and total DT seconds.
         /// </summary>
         [JsonProperty("overtime_seconds")]
-        public IReadOnlyDictionary<string, int> OvertimeSeconds { get; internal set; }
+        public IReadOnlyDictionary<string, int> OvertimeSeconds { get; set; }
 
         /// <summary>
         /// Gets the value which replaces total OT and total DT seconds.
         /// </summary>
         [JsonProperty("fixed_rate_seconds")]
-        public IReadOnlyDictionary<string, int> FixedRateSeconds { get; internal set; }
+        public IReadOnlyDictionary<string, int> FixedRateSeconds { get; set; }
     }
 }

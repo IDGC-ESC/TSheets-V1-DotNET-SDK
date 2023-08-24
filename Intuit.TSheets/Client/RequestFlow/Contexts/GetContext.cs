@@ -29,7 +29,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
     /// </summary>
     /// <typeparam name="T">The type of data entity.</typeparam>
     [JsonObject]
-    internal class GetContext<T> : PipelineContext<T>
+    public class GetContext<T> : PipelineContext<T>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetContext{T}"/> class.
@@ -37,7 +37,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
         /// <param name="endpoint">The endpoint with which to interact.</param>
         /// <param name="filter">The filter for narrowing down the result set.</param>
         /// <param name="options">The options for controlling the behavior of the operation.</param>
-        internal GetContext(EndpointName endpoint, EntityFilter filter, RequestOptions options)
+        public GetContext(EndpointName endpoint, EntityFilter filter, RequestOptions options)
             : base(MethodType.Get, endpoint)
         {
             Filter = filter ?? new NullFilter();
@@ -49,7 +49,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
         /// </summary>
         /// <param name="endpoint">The endpoint with which to interact.</param>
         /// <param name="filter">The filter for narrowing down the result set.</param>
-        internal GetContext(EndpointName endpoint, EntityFilter filter)
+        public GetContext(EndpointName endpoint, EntityFilter filter)
             : this(endpoint, filter, null)
         {
         }
@@ -59,7 +59,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
         /// </summary>
         /// <param name="endpoint">The endpoint with which to interact.</param>
         /// <param name="options">The options for controlling the behavior of the operation.</param> 
-        internal GetContext(EndpointName endpoint, RequestOptions options)
+        public GetContext(EndpointName endpoint, RequestOptions options)
             : this(endpoint, null, options)
         {
         }
@@ -68,12 +68,12 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
         /// Gets or sets the instance of <see cref="IEntityFilter"/>, for narrowing down the result set.
         /// </summary>
         [JsonProperty]
-        internal IEntityFilter Filter { get; set; }
+        public IEntityFilter Filter { get; set; }
 
         /// <summary>
         /// Gets the instance of <see cref="RequestOptions"/>, for controlling the behavior of the operation.
         /// </summary>
         [JsonProperty]
-        internal RequestOptions Options { get; private set; }
+        public RequestOptions Options { get; private set; }
     }
 }

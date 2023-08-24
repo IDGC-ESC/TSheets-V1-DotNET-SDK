@@ -38,7 +38,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [JsonConverter(typeof(DateFormatConverter))]
         [JsonProperty("start_date")]
-        public DateTimeOffset? StartDate { get; internal set; }
+        public DateTimeOffset? StartDate { get; set; }
 
         /// <summary>
         /// Gets the end date for the report.
@@ -48,7 +48,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [JsonConverter(typeof(DateFormatConverter))]
         [JsonProperty("end_date")]
-        public DateTimeOffset? EndDate { get; internal set; }
+        public DateTimeOffset? EndDate { get; set; }
 
         /// <summary>
         /// Gets the ids for users to be included in the report.
@@ -57,7 +57,7 @@ namespace Intuit.TSheets.Model
         /// Only time for these users will be included.
         /// </remarks>
         [JsonProperty("user_ids")]
-        public IReadOnlyList<long> UserIds { get; internal set; }
+        public IReadOnlyList<long> UserIds { get; set; }
 
         /// <summary>
         /// Gets the ids for groups to be included in the report.
@@ -66,7 +66,7 @@ namespace Intuit.TSheets.Model
         /// Only time for these groups will be included.
         /// </remarks>
         [JsonProperty("group_ids")]
-        public IReadOnlyList<long> GroupIds { get; internal set; }
+        public IReadOnlyList<long> GroupIds { get; set; }
 
         /// <summary>
         /// Gets the value indicating whether or not advanced overtime is enabled for the report.
@@ -76,6 +76,6 @@ namespace Intuit.TSheets.Model
         /// and can support more than just 1.5x (OT) and 2x (DT) overtime.
         /// </remarks>
         [JsonProperty("advanced_overtime")]
-        public bool? AdvancedOvertime { get; internal set; }
+        public bool? AdvancedOvertime { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// A singleton pipeline stage that throws an exception in the event that one or more
     /// items in a "create" or "update" batch failed.
     /// </summary>
-    internal class MultiStatusHandler : PipelineElement<MultiStatusHandler>
+    public class MultiStatusHandler : PipelineElement<MultiStatusHandler>
     {
         private MultiStatusHandler()
         {

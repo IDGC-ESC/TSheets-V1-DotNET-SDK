@@ -30,7 +30,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage which serializes to JSON the request for the report to be retrieved.
     /// </summary>
-    internal class GetReportSerializer : PipelineElement<GetReportSerializer>
+    public class GetReportSerializer : PipelineElement<GetReportSerializer>
     {
         private GetReportSerializer()
         {

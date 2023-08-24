@@ -24,7 +24,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
     /// <summary>
     /// Interface for a request pipeline
     /// </summary>
-    internal interface IPipeline : IPipelineElement
+    public interface IPipeline : IPipelineElement
     {
         /// <summary>
         /// Adds elements to the end of the pipeline.

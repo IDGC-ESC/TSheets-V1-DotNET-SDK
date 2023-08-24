@@ -31,12 +31,12 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP Code for a bad request.
         /// </summary>
-        internal const int HttpCode = 400;
+        public const int HttpCode = 400;
 
         /// <summary>
         /// The error text for a bad request.
         /// </summary>
-        internal const string ErrorTextValue = "Bad Request";
+        public const string ErrorTextValue = "Bad Request";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BadRequestException"/> class.
@@ -51,7 +51,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <param name="message">
         /// The message that describes the error.
         /// </param>
-        internal BadRequestException(string message)
+        public BadRequestException(string message)
             : base(HttpCode, ErrorTextValue, message, null)
         {
         }
@@ -68,7 +68,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <param name="innerException">
         /// The exception that is the cause of the current exception.
         /// </param>
-        internal BadRequestException(string errorText, string message, Exception innerException)
+        public BadRequestException(string errorText, string message, Exception innerException)
             : base(HttpCode, errorText, message, innerException)
         {
         }

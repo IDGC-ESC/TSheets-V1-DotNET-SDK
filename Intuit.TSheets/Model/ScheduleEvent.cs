@@ -74,7 +74,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the id of the calendar that contains this schedule event.
@@ -115,7 +115,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [NoSerializeOnWrite]
         [JsonProperty("user_id")]
-        public long? UserId { get; internal set; }
+        public long? UserId { get; set; }
 
         /// <summary>
         /// Gets the value indicating Whether or not the schedule event is assigned.
@@ -126,7 +126,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>/// 
         [NoSerializeOnWrite]
         [JsonProperty("unassigned")]
-        public bool? Unassigned { get; internal set; }
+        public bool? Unassigned { get; set; }
 
         /// <summary>
         /// Gets or sets the ids of the user(s) assigned to this event.
@@ -217,13 +217,13 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the date/time when this schedule event was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
     }
 }

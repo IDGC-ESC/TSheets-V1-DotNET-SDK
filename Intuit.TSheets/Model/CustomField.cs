@@ -66,7 +66,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the status of the custom field.
@@ -114,7 +114,7 @@ namespace Intuit.TSheets.Model
         [NoSerializeOnUpdate]
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("applies_to")]
-        public AppliesToType? AppliesTo { get; internal set; }
+        public AppliesToType? AppliesTo { get; set; }
 
         /// <summary>
         /// Gets or sets the type of custom field.
@@ -140,7 +140,7 @@ namespace Intuit.TSheets.Model
         [NoSerializeOnWrite]
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty("ui_preference")]
-        public CustomFieldUiPreferenceType? UiPreference { get; internal set; }
+        public CustomFieldUiPreferenceType? UiPreference { get; set; }
 
         /// <summary>
         /// Gets the regular expression to be applied.
@@ -151,27 +151,27 @@ namespace Intuit.TSheets.Model
         /// </remarks> 
         [NoSerializeOnWrite]
         [JsonProperty("regex_filter")]
-        public string RegexFilter { get; internal set; }
+        public string RegexFilter { get; set; }
 
         /// <summary>
         /// Gets the date/time when this custom field was last modified.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the date/time when this custom field was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
 
         /// <summary>
         /// Gets or sets the ids of custom fields that should be displayed when this custom field is visible on a timesheet.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("required_customfields")]
-        public IList<long> RequiredCustomFields { get; internal set; }
+        public IList<long> RequiredCustomFields { get; set; }
     }
 }

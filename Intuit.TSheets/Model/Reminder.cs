@@ -97,7 +97,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets id of the user that this reminder pertains to.
@@ -106,7 +106,7 @@ namespace Intuit.TSheets.Model
         /// A value of 0 indicates that this is a company-wide reminder.
         /// </remarks>
         [JsonProperty("user_id")]
-        public long? UserId { get; internal set; }
+        public long? UserId { get; set; }
 
         /// <summary>
         /// Gets or sets the type of this reminder object.
@@ -179,13 +179,13 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets date/time when this reminder was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
     }
 }

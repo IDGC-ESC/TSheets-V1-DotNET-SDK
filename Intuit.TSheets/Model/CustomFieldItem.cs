@@ -62,7 +62,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate] 
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the id for the custom field that this item belongs to.
@@ -100,13 +100,13 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the ids of the <see cref="CustomField"/> objects that should be displayed when this custom field item is selected on a timesheet.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("required_customfields")]
-        public IReadOnlyList<long> RequiredCustomFields { get; internal set; }
+        public IReadOnlyList<long> RequiredCustomFields { get; set; }
     }
 }

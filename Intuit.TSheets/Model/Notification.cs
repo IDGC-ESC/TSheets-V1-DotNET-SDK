@@ -61,7 +61,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the id for the user that this notification will be sent to.
@@ -74,7 +74,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("msg_tracking_id")]
-        public string MsgTrackingId { get; internal set; }
+        public string MsgTrackingId { get; set; }
 
         /// <summary>
         /// Gets or sets the message text of the notification.
@@ -129,6 +129,6 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
     }
 }

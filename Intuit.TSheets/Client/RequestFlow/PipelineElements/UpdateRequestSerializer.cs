@@ -30,7 +30,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage which serializes to JSON the input entities to be updated.
     /// </summary>
-    internal class UpdateRequestSerializer : PipelineElement<UpdateRequestSerializer>
+    public class UpdateRequestSerializer : PipelineElement<UpdateRequestSerializer>
     {
         private UpdateRequestSerializer()
         {

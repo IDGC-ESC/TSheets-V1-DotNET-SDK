@@ -99,7 +99,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the id for the user that this timesheet belongs to.
@@ -125,7 +125,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [NoSerializeOnWrite]
         [JsonProperty("locked")]
-        public int? Locked { get; internal set; }
+        public int? Locked { get; set; }
 
         /// <summary>
         /// Gets or sets the notes associated with this timesheet.
@@ -147,7 +147,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the timesheet.
@@ -171,7 +171,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [NoSerializeOnWrite]
         [JsonProperty("on_the_clock")]
-        public bool? OnTheClock { get; internal set; }
+        public bool? OnTheClock { get; set; }
 
         /// <summary>
         /// Gets or sets the ids of files attached to this timesheet.
@@ -184,7 +184,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created_by_user_id")]
-        public long? CreatedByUserId { get; internal set; }
+        public long? CreatedByUserId { get; set; }
 
         /// <summary>
         /// Gets or sets the total number of seconds recorded for this timesheet.

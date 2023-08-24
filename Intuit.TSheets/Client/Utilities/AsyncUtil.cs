@@ -28,7 +28,7 @@ namespace Intuit.TSheets.Client.Utilities
     /// preventing deadlocks that may occur with alternative
     /// approaches, e.g. .GetAwaiter().GetResult()
     /// </summary>
-    internal static class AsyncUtil
+    public static class AsyncUtil
     {
         private static readonly TaskFactory TaskFactory = new TaskFactory(
                 CancellationToken.None,
@@ -49,7 +49,7 @@ namespace Intuit.TSheets.Client.Utilities
         /// Synchronously executes an async method with a void return type
         /// </summary>
         /// <param name="task">Task to execute</param>
-        internal static void RunSync(Func<Task> task)
+        public static void RunSync(Func<Task> task)
             => TaskFactory.StartNew(task).Unwrap().GetAwaiter().GetResult();
     }
 }

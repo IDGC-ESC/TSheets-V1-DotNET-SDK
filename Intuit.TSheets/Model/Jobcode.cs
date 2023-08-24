@@ -58,13 +58,13 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the id of the parent of this jobcode.
         /// </summary>
         /// <remarks>
-        /// Value is 0 if jobcode is top-level.
+        /// Results is 0 if jobcode is top-level.
         /// </remarks>
         [JsonProperty("parent_id")]
         public long? ParentId { get; set; }
@@ -128,7 +128,7 @@ namespace Intuit.TSheets.Model
         /// be treated as a container or folder with children jobcodes underneath it.
         /// </remarks>
         [JsonProperty("has_children")]
-        public bool? HasChildren { get; internal set; }
+        public bool? HasChildren { get; set; }
 
         /// <summary>
         /// Gets or sets the value indicating whether or not this jobcode is assigned to all employees.
@@ -141,7 +141,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("required_customfields")]
-        public IReadOnlyList<long> RequiredCustomFields { get; internal set; }
+        public IReadOnlyList<long> RequiredCustomFields { get; set; }
 
         /// <summary>
         /// Gets the custom field items that are to be displayed when this jobcode is chosen for a timesheet.
@@ -152,7 +152,7 @@ namespace Intuit.TSheets.Model
         /// </remarks>
         [NoSerializeOnWrite]
         [JsonProperty("filtered_customfielditems")]
-        public IReadOnlyDictionary<string, IReadOnlyList<long>> FilteredCustomFieldItems { get; internal set; }
+        public IReadOnlyDictionary<string, IReadOnlyList<long>> FilteredCustomFieldItems { get; set; }
 
         /// <summary>
         /// Gets or sets the status of the jobcode.
@@ -172,27 +172,27 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the date/time when this jobcode was created.
         /// </summary>
         [NoSerializeOnWrite] 
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
 
         /// <summary>
         /// Gets the list of locations associated with this jobcode.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("locations")]
-        public IReadOnlyList<long> Locations { get; internal set; }
+        public IReadOnlyList<long> Locations { get; set; }
 
         /// <summary>
         /// Gets the id of the project.
         /// </summary>
         [JsonProperty("project_id")]
-        public long? ProjectId { get; internal set; }
+        public long? ProjectId { get; set; }
 
 
         /// <summary>

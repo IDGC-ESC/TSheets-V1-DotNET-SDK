@@ -24,7 +24,7 @@ namespace Intuit.TSheets.Model.Filters
     /// <summary>
     /// Interface for classes that can be used to filter results from a get call.
     /// </summary>
-    internal interface IEntityFilter
+    public interface IEntityFilter
     {
         /// <summary>
         /// Generates a set of key/value pairs used for filtering results from a get call.

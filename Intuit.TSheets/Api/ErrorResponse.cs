@@ -25,12 +25,12 @@ namespace Intuit.TSheets.Api
     /// Used internally, a transitory class for deserializing error response bodies from API calls.
     /// </summary>
     [JsonObject]
-    internal class ErrorResponse
+    public class ErrorResponse
     {
         /// <summary>
         /// Gets or sets an instance of <see cref="ErrorResponseDetail"/>, contains error code and message.
         /// </summary>
         [JsonProperty("error")]
-        public ErrorResponseDetail ErrorDetail { get; internal set; }
+        public ErrorResponseDetail ErrorDetail { get; set; }
     }
 }

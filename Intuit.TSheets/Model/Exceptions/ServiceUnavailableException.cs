@@ -32,7 +32,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for service unavailable.
         /// </summary>
-        internal const int Code = 503;
+        public const int Code = 503;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceUnavailableException"/> class.

@@ -22,7 +22,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
     /// <summary>
     /// Interface for pipeline context classes which support JSON serialization of requests.
     /// </summary>
-    internal interface ISerializedRequest
+    public interface ISerializedRequest
     {
         /// <summary>
         /// Gets or sets the JSON serialized request string.

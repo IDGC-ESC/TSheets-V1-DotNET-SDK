@@ -31,12 +31,12 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for not found.
         /// </summary>
-        internal const int HttpCode = 404;
+        public const int HttpCode = 404;
 
         /// <summary>
         /// The error text for not found.
         /// </summary>
-        internal const string ErrorTextValue = "Not Found";
+        public const string ErrorTextValue = "Not Found";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NotFoundException"/> class.
@@ -61,7 +61,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <param name="message">
         /// The error message that explains the reason for the exception.
         /// </param>
-        internal NotFoundException(string message)
+        public NotFoundException(string message)
             : base(HttpCode, ErrorTextValue, message, null)
         {
         }

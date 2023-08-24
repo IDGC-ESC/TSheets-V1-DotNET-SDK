@@ -38,7 +38,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
     /// For this pipeline to be used, the AutoPaging property of the <see cref="RequestOptions"/>
     /// object passed to the DataService method must be 'true'.
     /// </remarks>
-    internal class AutoPagingPipeline : IPipeline
+    public class AutoPagingPipeline : IPipeline
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoPagingPipeline"/> class.
@@ -46,7 +46,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
         /// <param name="innerPipeline">
         /// A standard pipeline instance which handles calls for each page.
         /// </param>
-        internal AutoPagingPipeline(IPipeline innerPipeline)
+        public AutoPagingPipeline(IPipeline innerPipeline)
         {
             InnerPipeline = innerPipeline;
         }
@@ -57,14 +57,14 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
         /// <remarks>
         /// For unit testing.
         /// </remarks>
-        internal AutoPagingPipeline()
+        public AutoPagingPipeline()
         {
         }
 
         /// <summary>
         /// Gets or sets the standard pipeline instance which handles calls for each page.
         /// </summary>
-        internal IPipeline InnerPipeline { get; set; }
+        public IPipeline InnerPipeline { get; set; }
 
         /// <summary>
         /// Starts retrieving results from the page number set in the provided context,

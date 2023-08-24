@@ -20,7 +20,6 @@
 namespace Intuit.TSheets.Client.Serialization.Converters
 {
     using System;
-    using System.Linq;
     using Intuit.TSheets.Client.Extensions;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;

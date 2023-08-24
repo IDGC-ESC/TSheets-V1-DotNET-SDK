@@ -38,7 +38,7 @@ namespace Intuit.TSheets.Api
     /// </summary>
     public partial class DataService : IDataService
     {
-        internal static readonly IEnumerable<JsonConverter> Converters = new JsonConverter[]
+        public static readonly IEnumerable<JsonConverter> Converters = new JsonConverter[]
         {
             new BoolStringConverter(),
             new DateFormatConverter(),
@@ -183,7 +183,7 @@ namespace Intuit.TSheets.Api
         /// <param name="logger">
         /// An instance of a <see cref="ILogger"/> class.
         /// </param>
-        internal DataService(DataServiceContext context, IPipelineFactory pipelineFactory, ILogger logger)
+        public DataService(DataServiceContext context, IPipelineFactory pipelineFactory, ILogger logger)
         {
             this.restClient = new ResilientRestClient(context, new RetrySettings(), logger);
 
@@ -206,7 +206,7 @@ namespace Intuit.TSheets.Api
         /// <param name="logger">
         /// An instance of a <see cref="ILogger"/> class.
         /// </param>
-        internal DataService(IPipelineFactory pipelineFactory, IRestClient restClient, ILogger logger)
+        public DataService(IPipelineFactory pipelineFactory, IRestClient restClient, ILogger logger)
         {
             this.pipelineFactory = pipelineFactory;
             this.restClient = restClient;
@@ -222,7 +222,7 @@ namespace Intuit.TSheets.Api
         /// A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The asynchronous task.</returns>
-        internal async Task ExecuteOperationAsync<T>(
+        public async Task ExecuteOperationAsync<T>(
             PipelineContext<T> context,
             CancellationToken cancellationToken)
         {

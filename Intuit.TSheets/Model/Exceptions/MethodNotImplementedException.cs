@@ -31,7 +31,7 @@ namespace Intuit.TSheets.Model.Exceptions
         /// <summary>
         /// The HTTP code for method not implemented.
         /// </summary>
-        internal const int Code = 501;
+        public const int Code = 501;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MethodNotImplementedException"/> class.

@@ -25,7 +25,7 @@ namespace Intuit.TSheets.Client.Utilities
     /// Abstract base class for singleton objects. Derived classes are lazily instantiated.
     /// </summary>
     /// <typeparam name="T">The singleton class type.</typeparam>
-    internal abstract class Singleton<T>
+    public abstract class Singleton<T>
         where T : class
     {
         private static readonly Lazy<T> BackingInstance
@@ -34,6 +34,6 @@ namespace Intuit.TSheets.Client.Utilities
         /// <summary>
         /// The singleton instance of the object of type T.
         /// </summary>
-        internal static T Instance => BackingInstance.Value;
+        public static T Instance => BackingInstance.Value;
     }
 }

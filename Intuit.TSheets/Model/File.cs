@@ -61,7 +61,7 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnCreate]
         [JsonProperty("id")]
-        public long Id { get; internal set; }
+        public long Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name of this file.
@@ -84,35 +84,35 @@ namespace Intuit.TSheets.Model
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("uploaded_by_user_id")]
-        public long? UploadedByUserId { get; internal set; }
+        public long? UploadedByUserId { get; set; }
 
         /// <summary>
         /// Gets the value indicating whether this file is considered deleted.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("active")]
-        public bool? Active { get; internal set; }
+        public bool? Active { get; set; }
 
         /// <summary>
         /// Gets the size of the file in bytes.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("size")]
-        public int? Size { get; internal set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// Gets the date/time when this file was created.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; internal set; }
+        public DateTimeOffset? Created { get; set; }
 
         /// <summary>
         /// Gets the date/time when this file was last modified.
         /// </summary>
         [NoSerializeOnWrite]
         [JsonProperty("last_modified")]
-        public DateTimeOffset? LastModified { get; internal set; }
+        public DateTimeOffset? LastModified { get; set; }
 
         /// <summary>
         /// Gets the key/value map of all the types linked to this file and the corresponding object ids.
@@ -120,7 +120,7 @@ namespace Intuit.TSheets.Model
         [NoSerializeOnWrite]
         [JsonConverter(typeof(EmptyArrayObjectConverter))]
         [JsonProperty("linked_objects")]
-        public FileLinkedObjectIds LinkedObjects { get; internal set; }
+        public FileLinkedObjectIds LinkedObjects { get; set; }
 
         /// <summary>
         /// Gets or sets the additional data associated with this file.

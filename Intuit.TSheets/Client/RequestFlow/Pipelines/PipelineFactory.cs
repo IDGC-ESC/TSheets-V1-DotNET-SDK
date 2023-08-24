@@ -29,7 +29,7 @@ namespace Intuit.TSheets.Client.RequestFlow.Pipelines
     /// <summary>
     /// A factory object for creating request pipeline instances.
     /// </summary>
-    internal class PipelineFactory : Singleton<PipelineFactory>, IPipelineFactory
+    public class PipelineFactory : Singleton<PipelineFactory>, IPipelineFactory
     {
         // Default pipeline for a "get" call
         private readonly IPipeline getPipeline = new RequestPipeline(

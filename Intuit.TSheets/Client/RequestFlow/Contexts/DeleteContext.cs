@@ -30,14 +30,14 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
     /// </summary>
     /// <typeparam name="T">The type of data entity.</typeparam>
     [JsonObject]
-    internal class DeleteContext<T> : PipelineContext<T>
+    public class DeleteContext<T> : PipelineContext<T>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteContext{T}"/> class.
         /// </summary>
         /// <param name="endpoint">The endpoint with which to interact.</param>
         /// <param name="ids">The set of ids corresponding to the data entities to be deleted.</param>
-        internal DeleteContext(EndpointName endpoint, IEnumerable<long> ids)
+        public DeleteContext(EndpointName endpoint, IEnumerable<long> ids)
             : base(MethodType.Delete, endpoint)
         {
             List<long> listIds = ids?.ToList();
@@ -53,6 +53,6 @@ namespace Intuit.TSheets.Client.RequestFlow.Contexts
         /// Gets the set of ids corresponding to the data entities to be deleted.
         /// </summary>
         [JsonProperty]
-        internal IEnumerable<long> Ids { get; private set; }
+        public IEnumerable<long> Ids { get; private set; }
     }
 }

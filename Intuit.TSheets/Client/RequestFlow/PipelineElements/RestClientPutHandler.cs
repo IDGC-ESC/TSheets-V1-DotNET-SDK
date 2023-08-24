@@ -27,7 +27,7 @@ namespace Intuit.TSheets.Client.RequestFlow.PipelineElements
     /// <summary>
     /// A singleton pipeline stage that invokes the http rest client to perform an "update" operation.
     /// </summary>
-    internal class RestClientPutHandler : PipelineElement<RestClientPutHandler>
+    public class RestClientPutHandler : PipelineElement<RestClientPutHandler>
     {
         private RestClientPutHandler()
         {

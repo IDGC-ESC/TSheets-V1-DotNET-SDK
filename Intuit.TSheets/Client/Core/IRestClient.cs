@@ -27,7 +27,7 @@ namespace Intuit.TSheets.Client.Core
     /// <summary>
     /// Interface for an HTTP client to the TSheets Rest API.
     /// </summary>
-    internal interface IRestClient
+    public interface IRestClient
     {
         /// <summary>
         /// Creates entities in TSheets via an HTTP POST call to the API endpoint.

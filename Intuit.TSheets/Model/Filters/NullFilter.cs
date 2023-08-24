@@ -26,7 +26,7 @@ namespace Intuit.TSheets.Model.Filters
     /// Used internally, indicates no filtering is to be done while retrieving entity results (null object pattern).
     /// </summary>
     [JsonObject]
-    internal class NullFilter : EntityFilter
+    public class NullFilter : EntityFilter
     {
         public override Dictionary<string, string> GetFilters() => new();
     }
